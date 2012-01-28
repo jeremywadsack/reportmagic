@@ -907,7 +907,7 @@ sub _defaults {
 	# Check GD for support of desired output format. If none
 	# given or not capable, then set output format accordingly.
 	#
-	my $g = new GD::Image(0,0);
+	my $g = new GD::Image(1,1);
 
 	if( defined $self->val( 'graphs', 'Format' ) ) {
 		if( $self->val( 'graphs', 'Format' ) =~ /jpe?g/i ) {
