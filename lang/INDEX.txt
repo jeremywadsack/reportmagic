@@ -1,0 +1,18 @@
+Report Magic has the following languages available:
+
+ca	Catalan
+de	German
+en	US-English
+es	Spanish
+fi	Finnish
+fr	French
+hu	Hungarian
+it	Italian
+ja	Japanese
+no	Norwegian
+pl	Polish
+pt	Portuguese
+pt-BR	Portuguese (Brazilian)
+ru	Russian
+sv	Swedish
+zh	Traditional Chinese (Big5)

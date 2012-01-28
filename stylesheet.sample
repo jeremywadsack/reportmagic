@@ -1,0 +1,15 @@
+<!--
+ A sample stylesheet that will produce the same styles that are in rmagic.sample
+ Make sure to copy this to the reports/ folder!
+-->
+body {}
+th {background-color:#9999CC;}
+th.total {background-color:#FFCC66;}
+td {font-family:Helvetica,Arial,sans-serif;}
+td.alt1 {background-color:#D0FFD0;}
+td.alt2 {background-color:#F0FFF0;} 
+h1 {text-align:CENTER; font-size:20pt;}
+h2 {background-color:#000000; font-weight:bold; width:95%; font-size:12pt; border:none; font-family:Helvetica,Arial,sans-serif; padding:3pt; color:#FFCC00;}
+.fineprint {font-size:7pt;}
+.smallfont {font-size:8pt;}
+

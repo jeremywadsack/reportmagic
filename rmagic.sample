@@ -1,0 +1,40 @@
+#
+# Sample Report Magic settings file.
+# For details on commands see the documentations, starting at docs/index.html
+# or see the comments in the rmagic.ini file in each language directory 
+# (e.g lang/en/rmagic.ini)
+#
+
+[statistics]
+File_In = sample.dat
+Frame_File_Out = index.html
+Format= XHTML 1.0
+
+[reports]
+Active_Column=R
+File_Out = reports/
+
+Title_Font = Helvetica,Arial,sans-serif
+Title_BG_Color = #000000
+Title_Font_Color = #FFCC00
+
+Data_Font = Helvetica,Arial,sans-serif
+Data_Color_1 = #D0FFD0
+Data_Color_2 = #F0FFF0
+Data_Total_Color = #FFCC66
+Data_Header_Color = #9999CC
+
+[QUICK]
+Rows = ALL
+
+[graphs]
+BG_Color = #FFFFCC
+
+[navigation]
+File_Out = nav.html
+
+[website]
+Title = Web Statistics for my website
+Webmaster = webmaster@website.com
+Base_URL = http://www.website.com
+

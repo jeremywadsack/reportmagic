@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1" />
+        <meta name="AUTHOR" content="This page created by Wadsack-Allen Digital Goup" />
+        <title>Report Magic for Analog Documentation - Running Report Magic Under CGI</title>
+<style type="text/css">
+<!--
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+a {
+    text-decoration:normal;
+}
+
+h1 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:24pt; 
+    font-weight:bold;
+}
+
+h2 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:18pt; 
+    font-weight:bold;
+}
+
+h3 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:16pt; 
+    font-weight:bold;
+}
+
+h4 {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:14pt; 
+    font-weight:bold
+}
+
+dl {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ul {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ol {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+.fineprint {
+    font-family:Arial, Helvetica; 
+    font-size:8pt;
+}
+
+.fineprint a {
+    color:#000099;
+    font-weight:bold;
+}
+
+code {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+pre {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+
+.note  { 
+	background-color: #f50000; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px #c50000; 
+}
+
+.term  { 
+	background-color: #f5f5f5; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px silver;
+	font-family: monospace,courier,fixedsys;
+	font-size: 8pt;
+}
+-->
+</style>
+    </head>
+
+    <body bgcolor="#ffffff" text="#000000" link="#000099" vlink="#cc3399" alink="#003399">
+        <table border="0" cellspacing="0" cellpadding="0" summary="Layout table">
+            <tr>
+                <td align="center"><a href="http://www.reportmagic.org/"><img src="images/title.gif" width="288" height="66" alt="Report Magic for Analog" border="0" /></a> </td>
+
+                <td rowspan="2" align="left" valign="top"><img src="images/logo.gif" width="138" height="150" alt="Documentation" /> </td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="top" width="291">
+                    <h1>Running Report Magic Under CGI</h1>
+                </td>
+            </tr>
+        </table>
+        
+
+<p>Report Magic can be run as a CGI application. This means you can create a 
+form on your web site that users can select option from and Report Magic will
+build reports on-the-fly. To do this it runs Analog in the background to process
+your log files (or cache files). It is assumed you know how to configure your
+web server to run CGI applications and that you are familiar with setting 
+permissions for them.</p>
+
+<p>To run Report Magic as a CGI application, you must install it in your CGI 
+folder on your web server. This folder is often called <code>cgi-bin</code> on
+Unix servers and <code>Scripts</code> on IIS servers. When running in CGI mode
+Report Magic will only read the <code>rmagic.ini</code> file located in the 
+same directory as the Report Magic application. For security reasons, you cannot
+specify an alternate file from the command-line.</p>
+
+<p>Next copy the basic form <code>rmform.html</code> from the distribution
+to a readable location on your web site (often files in the CGI folder can be run or 
+executed, but not read). If you want, you can also create your own form. In either 
+case you will need to edit the file to specify the URL to your Report Magic 
+application.</p>
+
+<p>Now add a <code>[CGI]</code> section to your <code>rmagic.ini</code> settings
+file and an item, <code>Analog</code> that tells Report Magic where to find you
+Analog executable. This section might look like this:</p>
+
+<pre>
+ [CGI]
+   Analog = /usr/local/analog/analog
+</pre>
+
+<p>Analog and Report Magic will ignore some command from the CGI interface. The 
+defaults on this are safe but may not be as secure as you'd wish them. See the CGI 
+section of <a href="config.html#cgi">Building You Settings File</a> for details on 
+how to limit other commands and additional settings.</p>
+
+<p>Once you have all this configured, you should be able to enter the values you
+want in the form and run the report. Depending on the size of your log files this
+could take a while to run.</p>
+
+<h3>Charts</h3>
+<p>If you want charts in your CGI-produced reports, then you need to tell Report
+Magic where to store them. You can do this with the <code>Path_To</code> and 
+<code>URL_To</code> settings in the <code>[graphs]</code> seciton of your settings
+file. <code>Path_To</code> tells Report Magic which folder on the server to write 
+the images to. <code>URL_To</code> tells your browser where to find them. See 
+<a href="repconf.html#graphs">the Graphs section of Report Settings</a> for more
+details on these commands.</p>
+
+
+ 
+        
+
+        <div style="text-align: center; border-top: 2px solid black; border-bottom: 2px solid black; margin-top: 4px; margin-bottom: 6px; padding-top: 4px; padding-bottom:6px;">
+            [<a href="index.html">Introduction</a>]&nbsp;[<a href="map.html">Documentation&nbsp;map</a>]&nbsp;[<a href="siteindex.html">Index</a>]&nbsp;[<a href="faq.html">Frequently Asked Questions</a>]&nbsp;[<a href="license.html">License</a>]
+        </div>
+        
+        <span class="fineprint">Send questions or comments to <a href="mailto:dgsupport@wadsack-allen.com">Wadsack-Allen Digital Group Support</a>.<br />
+         <a href="http://reportmagic.org/">Report Magic</a> 2.21 Documentation. Copyright &copy; 1999-2003 <a href="http://wadsack-allen.com/">Wadsack-Allen</a>. All Rights Reserved.</span>
+    </body>
+</html>
+
+

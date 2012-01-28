@@ -1,0 +1,492 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1" />
+        <meta name="AUTHOR" content="This page created by Wadsack-Allen Digital Goup" />
+        <title>Report Magic for Analog Documentation - Installing the Source Package</title>
+<style type="text/css">
+<!--
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+a {
+    text-decoration:normal;
+}
+
+h1 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:24pt; 
+    font-weight:bold;
+}
+
+h2 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:18pt; 
+    font-weight:bold;
+}
+
+h3 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:16pt; 
+    font-weight:bold;
+}
+
+h4 {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:14pt; 
+    font-weight:bold
+}
+
+dl {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ul {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ol {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+.fineprint {
+    font-family:Arial, Helvetica; 
+    font-size:8pt;
+}
+
+.fineprint a {
+    color:#000099;
+    font-weight:bold;
+}
+
+code {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+pre {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+
+.note  { 
+	background-color: #f50000; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px #c50000; 
+}
+
+.term  { 
+	background-color: #f5f5f5; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px silver;
+	font-family: monospace,courier,fixedsys;
+	font-size: 8pt;
+}
+-->
+</style>
+    </head>
+
+    <body bgcolor="#ffffff" text="#000000" link="#000099" vlink="#cc3399" alink="#003399">
+        <table border="0" cellspacing="0" cellpadding="0" summary="Layout table">
+            <tr>
+                <td align="center"><a href="http://www.reportmagic.org/"><img src="images/title.gif" width="288" height="66" alt="Report Magic for Analog" border="0" /></a> </td>
+
+                <td rowspan="2" align="left" valign="top"><img src="images/logo.gif" width="138" height="150" alt="Documentation" /> </td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="top" width="291">
+                    <h1>Installing the Source Package</h1>
+                </td>
+            </tr>
+        </table>
+        
+
+<h3>Saving and Extracting</h3>
+<p>When you download the package file, store it somewhere on your hard 
+drive (like /usr/src/rmagic or ~/rmagic). When it's completed, uncompress 
+the archive using gzip and/or tar or some similar utility. If you
+have <a href="http://www.gnu.org/software/tar/tar.html">GNU tar</a> you can 
+simply use 'tar -xzf rmagic-*.tar.gz'.</p>
+
+<h3>Documentation</h3>
+<p>When you uncompress the archive, it will create a subdirectory under the 
+location you told it called <code>docs</code>. From your web browser (or 
+<code>vi</code> if it reads HTML files on your system), open 
+the file <code>index.html</code> in this directory to learn how to use 
+Report Magic for Analog. In the Report Magic directory is also a file called 
+<code>README</code>. Please see this file for last-minute changes.</p>
+
+<h3>Installation</h3>
+<p>
+(These instructions are also in the file <code>INSTALL</code> in the 
+root of the source package archive.)
+The first time you install Report Magic can be somewhat complicated. Please 
+read through the instructions on this page completely before starting so 
+you have a good idea of what will be required. Because much of Report Magic 
+is built with reusable code, upgrades will be simple. For upgrade notes, see 
+the <a href="whatsnew.html">What's New</a> page. These instructions and the 
+included Install.PL script assume you are using a Unix-like system. If not, 
+it is up to you to make the necessary translations in the instructions and 
+the Install.PL file to reflect you computer's file system.</p>
+
+<p>To run Report Magic, you need to have Perl 5.004 or newer installed 
+on your system. (You really should have 5.005 or 5.6) You can find the 
+version of Perl that you have by typing 'perl -v' at the prompt. If the system 
+says 'unknown command' you either do not have Perl installed or it is not on 
+your path. If you don't have it see the 
+<a href="http://www.perl.com/">perl.com home page</a> for details on 
+getting the Perl interpreter. Compiled binaries for Perl are available for 
+almost every platform.</p>
+
+<p>Before installing for the first time, you will need to install 
+some system libraries if they aren't already installed. To generate 
+the graphs, Report Magic needs three libraries - zlib, libpng and libgd. If 
+you want TrueType font support in your graphs, you can also install the lttf 
+TrueType library from FreeType. If you want jpeg support, you can install the 
+jpeg-6b library.</p>
+
+<h4>Using Packages</h4>
+<p>It is much easier to install the libgd library from a package, if your 
+operating system supports such. Of course, you will probably want to make 
+sure a recent version is available. As of this writing, libgd is at version 
+1.8.3. The following packages were known to exist at this time as well:</p>
+
+<dl>
+<dt>Debian Linux</dt>
+<dd>A complete 
+<a href="http://www.debian.org/Packages/unstable/web/rmagic.html">Report Magic package</a> 
+is available for Debian Linux. It may not be the latest version, but it should have 
+links to all dependent packages</dd>
+
+<dt>FreeBSD</dt>
+<dd>Report Magic is available in the FreeBSD ports collection as 
+<code>www/reportmagic</code> on releases after 4.2. There is also a ready-to-run 
+package on the FTP mirror sites and CDs after 4.2. Analog is in <code>www/analog</code>.
+Details on installing ports are covered in <a href="http://www.freebsd.org/handbook/ports.html">the 
+Handbook</a>. Basically, in each directory 'make install && make clean' will 
+do the job and recover the drive space used. This may not be the latest version, 
+but it should have links to depenedent packages.</dd>
+
+<dt>RedHat Linux</dt>
+<dd>You can use the <a href="http://rpmfind.net/linux/RPM/libgd.so.1.html">RPM for 
+libgd</a> to get the system libraries installed. Then just run the <code>Install.PL</code> 
+to install the Perl modules and Report Magic files.</dd>
+
+<dt>Solaris</dt>
+<dd>There are <code>libgd</code> packages available for most sparc versions
+of Solaris:<br />
+	<ul>
+	<li><a href="http://sunsite.sut.ac.jp/sun/solaris-binaries/sparc/gd.1.8.1.SPARC.Solaris.2.3.pkg.tgz">Solaris 2.3 SPARC</a></li>
+	<li><a href="http://sunsite.sut.ac.jp/sun/solaris-binaries/sparc/gd.1.8.1.SPARC.Solaris.2.4.pkg.tgz">Solaris 2.4 SPARC</a></li>
+	<li><a href="http://sunsite.sut.ac.jp/sun/solaris-binaries/sparc/gd.1.8.1.SPARC.Solaris.2.5.pkg.tgz">Solaris 2.5 SPARC</a></li>
+	<li><a href="http://sunsite.sut.ac.jp/sun/solaris-binaries/sparc/gd.1.8.1.SPARC.Solaris.2.5.1.pkg.tgz">Solaris 2.51 SPARC</a></li>
+	<li><a href="http://sunsite.sut.ac.jp/sun/solaris-binaries/sparc/gd.1.8.1.SPARC.Solaris.2.6.pkg.tgz">Solaris 2.6 SPARC</a></li>
+	<li><a href="http://sunsite.sut.ac.jp/sun/solaris-binaries/sparc/gd.1.8.1.SPARC.32bit.Solaris.7.pkg.tgz">Solaris 7 SPARC32</a></li>
+	<li><a href="http://sunsite.sut.ac.jp/sun/solaris-binaries/sparc/gd.1.8.1.SPARC.32bit.Solaris.8.pkg.tgz">Solaris 8 SPARC32</a></li>
+	</ul>
+Use these as a starting point, then run <code>Install.PL</code> to get the 
+Perl modules and Repport Magic files installed.</dd>
+
+<dt>Mac OS X</dt>
+<dd>There is a separate set of instruction <a href="inst_osx.html">here</a> that details the 
+installation of Report Magic on Mac OS X.</dd>
+</dl>
+
+<h4>Building from source</h4>
+<p>If one of the above packages does not work for you, then you can procede with the standard 
+install procedure described below to install libgd from the source.</p>
+
+<dl>
+<dt>zlib</dt>
+<dd>The <a href="http://www.gzip.org/zlib/">zlib compression library</a> can be 
+acquired from various mirrors at <a href="http://www.gzip.org/zlib/">gzip.org</a> 
+Download the source code archive and extract it. 
+Read the installation documentation and the license. On most systems (Solaris 
+is an exception) you will not have to build the zlib library if you don't want. 
+When you build libpng, it incorporates the source files rather than the actual 
+lib files. If you choose to build and install zlib (or your system requires that 
+you do) Then do the standard install procedure:</dd>
+<pre>
+	$ ./configure
+	$ make
+	# make install (as root)
+</pre>
+
+
+<dt>libpng</dt>
+<dd>Installing <a href="http://www.libpng.org/pub/png/libpng.html">libpng</a> is a 
+little more complicated. You can acquire the latest version from 
+<a href="http://www.libpng.org/pub/png/src/">http://www.libpng.org/pub/png/src/</a>. 
+Look for something like 'libpng-x.x.x.tar.gz', where x.x.x is the newest 
+(i.e. highest) version number. Download this and extract it. Read the 
+installation documentation and the license. You need to have the zlib, that 
+you just uncompressed, on the same level as the libpng directory and they should 
+both be named without their versions. Your directory structure should look 
+like this:</dd>
+<pre>
+	|
+	+- zlib
+	|
+	+- libpng
+</pre>
+<dd>Something like this should do it, but may differ from system to system. 
+You'll have to remove the archive before doing this (rm *.tar or rm *.tar.gz 
+depending on your tar version). You should choose one of the makefiles in the 
+libpng/scripts directory according to your system (e.g. scripts/makefile.linux 
+for Linux or scripts/makefile.sunos for Solaris).:</dd>
+<pre>
+	$ mv zlib* zlib
+	$ mv libpng* libpng
+	$ cd libpng
+	$ cp scripts/makefile.stf Makefile
+	$ make
+	# make install (as root)
+</pre>
+
+
+<dt>freetype (<em>Optional</em>)</dt>
+<dd>If you want to allow support for TrueType fonts in your graphs you can 
+install <a href="http://www.freetype.org/">freetype</a>. This library is not 
+required for installation, but may be useful. (If you intend to output in 
+Japanese or Polish, you will need this library installed. It is also helpful 
+for Italian ouput.) You can download lttf from 
+<a href="http://freetype.sourceforge.net/download.html">this page</a>. After 
+reading the installation instructions and license, you can build it with the 
+standard techinique:</dd>
+<pre>
+	$ ./configure
+	$ make
+	# make install (as root)
+</pre>
+
+
+<dt>jpeg-6b</dt>
+<dd>The jpeg-6b library may already be installed on your system. Check 
+<code>/lib</code>, <code>/usr/lib</code>, and <code>/usr/local/lib</code>
+or your system's equivalents. If not it can be downloaded from 
+<a href="ftp://ftp.uu.net/graphics/jpeg/jpegsrc.v6b.tar.gz">ftp://ftp.uu.net/graphics/jpeg/jpegsrc.v6b.tar.gz</a>. 
+After reading the installation instructions and license, you can build 
+it with the following commands:</dd>
+<pre>
+	$ ./configure --enable-shared
+	$ make
+	$ make test
+	# make install (as root)
+</pre>
+
+
+<dt>libgd</dt>
+<dd>Installing <a href="http://www.boutell.com/gd/">libgd</a> should then 
+be straight-forward. Download the latest version from the link at the top of
+<a href="http://www.boutell.com/gd/">the GD web page</a> and extract it. Read the 
+installation documentation and the license. <strong>NOTE</strong> you will need to edit 
+at least the LIBS and CFLAGS lines Makefile if you wish to include support for 
+jpeg or ttf. You may also have to add <code>-I/usr/local/include/freetype</code> 
+to the <code>INCLUDEDIRS=</code> line to make it work with freetype-1.3.1. Read the 
+notes in the Makefile for more information. You can then build the library with the 
+standard:</dd>
+<pre>
+	$ make
+	# make install (as root)
+</pre>
+</dl>
+
+<h4>Installing rmagic and Perl modules</h4>
+<p>If all system libraries installed successfully, then the rest should 
+be quite simple. To install change to root user, change directory into the 
+rmagic directory where you uncompressed the Report Magic archive and type 
+the following command:</p>
+
+<pre>
+	perl Install.PL
+</pre>
+
+<p>If all goes well, this will load all the necessary Perl modules (that 
+aren't already loaded and up-to-date), install Report Magic in the 
+directory <code>/usr/local/etc/httpd/rmagic/</code> (or similar directory 
+with version number) and install the documentation below that.</p>
+
+<p>If you want to install Report Magic elsewhere, simply edit the configuration 
+settings in the top of the Install.PL file.</p>
+
+<p>Autoloading the required perl modules from CPAN may require several more 
+steps. First, this uses the CPAN module to load modules from CPAN. You will 
+need to configure this the first time it runs by answering serveral 
+questions. It also requires that you are connected to the Internet 
+(or a local CPAN mirror if you have such and your CPAN module has been 
+configured for such). Second, <I>using this may be a security risk</I>. 
+There is no signature system for CPAN code. It is possible (though unlikely) 
+that CPAN downloads may have been tampered with. If this bothers you, don't 
+run this part of the install. Instead install all the modules by hand 
+(see below). (Although, this still could contain tampered modules, but at 
+least you can look at all the sources first before you put them in your Perl 
+site library.)</p>
+
+<p>When configuring your CPAN setup, you will be asked for the URL of 
+your favorite CPAN site. On some systems this includes a list to choose from, 
+on some it doesn't. If no list is presented, you can type in 
+'ftp://ftp.cpan.org/pub/CPAN'.</p>
+
+<p>While the install script is running, watch carefully for any errors. The 
+script will continue to try to install all necessary Perl even if some fail. 
+This may mean that other will fail later (because of dependencies). Also, 
+the latest version of GD will ask you some question about the way libgd was 
+installed on your system.</p>
+
+<p>If you don't want to auto-load the latest version of the necessary Perl 
+modules, use this instead:</p>
+
+<pre>
+	perl Install.PL -no_modules
+</pre>
+
+<p>If you just want to auto-load the latest version of the necessary Perl 
+modules, but don't want to move Report Magic (i.e. you will run it from the 
+directory you unarchived it into) use this instead:</p>
+
+<pre>
+	perl Install.PL -only_modules
+</pre>
+
+
+<a name="perl-module-install"></a><h3>Manual Installation of Perl Modules</h3>
+<p>Report Magic for Analog requires several Perl modules, as well as the 
+core Perl interpreter. If you've chosen not to autoload the necessary, Perl 
+modules, they are shown below in the recommended install order. After each 
+module name is a version number indicating when in the Report Magic history, 
+the module dependency was added. If you are upgrading from a previous version, 
+you need only add modules that show a newer version dependency than the one 
+you are upgrading from.</p>
+<p>Each Perl module will install with the standard perl install method:</p>
+<pre>
+	perl Makefile.PL
+	make
+	make test
+	make install
+</pre>
+
+<center><h4>CPAN Modules</h4></center>
+<dl>
+<dt><strong>GD</strong> <font size="1">Since 1.0 BETA 1</font></dt>
+<dd>In order to generate the graphs, Report Magic uses Licoln Stein's GD.pm 
+graphics module interface for Thomas Boutell's libgd graphics library. (If you 
+are running ActivePerl on Win32 this ships with the distribution so you can 
+just continue on to the next item.) The libgd graphics library now outputs 
+PNG format graphics files. This means it, in turn requires libpng, which, 
+in turn, requires zlib for compression. This is a lot of installation, 
+compilation and work (as documentated above), but you'll only need to do it 
+once. If you have an older version of libgd, but want PNG support, follow 
+those instructions to update it.</dd>
+<dd>If you haven't already installed these libraries, follow the instructions 
+above and then continue with the Perl GD module installation. Next, install 
+the GD.pm Perl interface module. This can be downloaded from CPAN. Check 
+<a href="ftp://ftp.cpan.org/pub/CPAN/authors/id/LDS/">here</a> for the latest 
+version of GD.</dd>
+
+<dt><strong>GD::Text</strong> <font size="1">Since 1.3</font></dt>
+<dd>Martien Verbruggen's GD::Text module is the source for all text and 
+font handling in the GD::Graph and GD::Graph3d modules. You can find the latest
+version on CPAN in <a href="ftp://ftp.cpan.org/pub/CPAN/authors/id/MVERB/">this directory</a>.</dd>
+
+<dt><strong>GD::Graph</strong> <font size="1">Since 1.3</font></dt>
+<dd>Martien Verbruggen's GD::Graph module is used as the basis for the graphs. 
+This replaces GIFgraph. If you are upgrading from an older version, Report 
+Magic does not and will no longer need GIFgraph. You can find the latest 
+version on CPAN in <a href="ftp://ftp.cpan.org/pub/CPAN/authors/id/MVERB/">this directory</a>.</dd>
+
+<dt><strong>GD::Graph3d</strong> <font size="1">Since 1.3</font></dt>
+<dd>Extension to Martien Verbruggen's GD::Graph module is used for the 
+3D graphs. You can find the latest version on CPAN in 
+<a href="ftp://ftp.cpan.org/pub/CPAN/authors/id/W/WA/WADG/">this directory</a>.</dd>
+
+<dt><strong>Config::IniFiles</strong> <font size="1">Since 2.0 BETA 1</font></dt>
+<dd>Teh Config::IniFiles package is used to read the configuration and 
+settings files. You can find the latest version 
+<a href="ftp://ftp.cpan.org/pub/CPAN/modules/by-authors/id/RBOW/">here</a>.</dd>
+
+<dt><strong>HTML::Tagset</strong> <font size="1">Since 1.0 BETA 1</font></dt>
+<dd>This module is a required by the <strong>HTML::Parser</strong> package by Gisle Aas. 
+You can find the latest version on CPAN 
+<a href="ftp://www.cpan.org/pub/CPAN/modules/by-authors/id/S/SB/SBURKE/">here</a>.</dd>
+
+<dt><strong>HTML::Entities</strong> <font size="1">Since 1.0 BETA 1</font></dt>
+<dd>This module is a part of the <strong>HTML::Parser</strong> package by Gisle Aas. 
+You can find the latest version on CPAN 
+<a href="ftp://ftp.cpan.org/pub/CPAN/authors/id/GAAS/">here</a>.</dd>
+
+<dt><strong>File::Spec</strong> <font size="1">Since 1.0 BETA 3</font></dt>
+<dd>This modules is part of Perl 5.005 distributions, so if you Perl is 
+5.005 or newer you don't need to get this. If you're using VMSPerl, make 
+sure you update to the latest available version and install the patch 
+available from <a href="http://www.xray.mpe.mpg.de/mailing-lists/vmsperl/1999-05/msg00058.html">http://www.xray.mpe.mpg.de/mailing-lists/vmsperl/1999-05/msg00058.html</a>. 
+If you are running MacPerl, OS/2Perl or Perl 5.004, File:Spec does NOT ship 
+with those distributions. You can get it from CPAN 
+<a href="ftp://ftp.cpan.org/pub/CPAN/authors/id/KJALB/">here</a>.</dd>
+
+<dt><b>Time::Local</b> <font size="1">Since 2.10</font></dt>
+<dd>This modules is part of Perl 5.005 and later distributions, so if you Perl is 
+5.005 or newer you don't need to install this. If you're using MacPerl or other Perl 
+5.004 or earlier, you can dowload a copy of the Time::Local module from our
+website <a href="http://reportmagic.org/dev/Local.pm">here</a>. To install it, save it to a folder called 
+<code>Time</code> under your Report Magic folder.</dd>
+
+
+<a name="File-Temp"></a><dt><b>File::Spec</b> <font size="1">Since 2.20</font></dt>
+<dd>You can download this from CPAN <a href="http://search.cpan.org/author/TJENNESS/File-Temp-0.12/">here</a>.
+Install using the steps <a href="#">above</a>.</dd>
+
+</dl>
+
+<hr width="80%">
+
+<center><h4>Perl Modules</h4></center>
+<p>These modules ship with Perl 5.004 or higher. They are listed here for 
+completeness, but you should not need to worry about adding or finding them.</p>
+<dl>
+<dt>File::Copy <font size="1">Since 1.0 BETA 1</font></dt>
+<dt>File::Basename <font size="1">Since 1.0 BETA 3</font></dt>
+<dt>File::Path <font size="1">Since 1.0 BETA 3</font></dt>
+<dd>These modules are in the 
+<a href="ftp://ftp.cpan.org/pub/CPAN/modules/by-module/File/">File</a> 
+directory on CPAN.</dd>
+
+<dt>FindBin <font size="1">Since 1.0 BETA 1</font></dt>
+<dt>lib.pm <font size="1">Since 1.0 BETA 1</font></dt>
+<dd>These two modules are listed by name on CPAN 
+<a href="ftp://ftp.cpan.org/pub/CPAN/modules/by-module/">here</a>.</dd>
+
+</dl>
+
+
+ 
+        
+
+        <div style="text-align: center; border-top: 2px solid black; border-bottom: 2px solid black; margin-top: 4px; margin-bottom: 6px; padding-top: 4px; padding-bottom:6px;">
+            [<a href="index.html">Introduction</a>]&nbsp;[<a href="map.html">Documentation&nbsp;map</a>]&nbsp;[<a href="siteindex.html">Index</a>]&nbsp;[<a href="faq.html">Frequently Asked Questions</a>]&nbsp;[<a href="license.html">License</a>]
+        </div>
+        
+        <span class="fineprint">Send questions or comments to <a href="mailto:dgsupport@wadsack-allen.com">Wadsack-Allen Digital Group Support</a>.<br />
+         <a href="http://reportmagic.org/">Report Magic</a> 2.21 Documentation. Copyright &copy; 1999-2003 <a href="http://wadsack-allen.com/">Wadsack-Allen</a>. All Rights Reserved.</span>
+    </body>
+</html>
+
+
+

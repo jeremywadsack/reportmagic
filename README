@@ -1,0 +1,49 @@
+Report Magic for Analog 2.21 Readme File
+Copyright (C) 1999-2003 Wadsack-Allen. All Right Reserved.
+Portions copyright (C) 1999 DNS.
+
+Report Magic for Analog is an add-on formatting utility for Analog 
+web site statistics software. Report Magic uses the statistics generated 
+by Analog and formatting options set by you to make readable, presentable 
+reports of your Web site data.
+
+LICENSE
+-------
+Please see docs/license.html for details.
+
+DOCUMENTATION
+-------------
+Please see the documentation starting at docs/index.html for complete
+instructions on using Report Magic for Analog.
+
+INSTALLATION
+------------
+Installation instructions are located in the files docs/inst_src.html, 
+docs/inst_win.html and docs/inst_mac/html. They are also available on 
+the Web at http://www.reportmagic.org/.
+
+OTHER OPTIONS
+-------------
+[Shameless plugs] If you would like help installing Report Magic or 
+don't want the hassle of managing your entire statistics system, 
+the authors provide both a hosted solution, http://stats.reportmagic.com/ 
+(nice for one or two reports) and installation and configuration
+services. These are both commercial (i.e. paid) alternatives. 
+See http://www.reportmagic.com/ for all options.
+
+KNOWN BUGS
+----------
+There is a BUGS page on the website. Check there for the most 
+recently found problems:
+http://www.reportmagic.org/bugs.html
+
+LATEST VERSION
+--------------
+The latest version of Report Magic can always be found at at 
+http://www.reportmagic.org/.
+
+FEEDBACK
+--------
+Comments, questions and suggestions are always appreciated. Feedback on 
+Report Magic for Analog can be sent via email to dgsupport@wadsack-allen.com.
+

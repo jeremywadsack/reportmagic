@@ -1,0 +1,181 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1" />
+        <meta name="AUTHOR" content="This page created by Wadsack-Allen Digital Goup" />
+        <title>Report Magic for Analog Documentation - Installing the Source Package on Mac OS X</title>
+<style type="text/css">
+<!--
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+a {
+    text-decoration:normal;
+}
+
+h1 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:24pt; 
+    font-weight:bold;
+}
+
+h2 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:18pt; 
+    font-weight:bold;
+}
+
+h3 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:16pt; 
+    font-weight:bold;
+}
+
+h4 {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:14pt; 
+    font-weight:bold
+}
+
+dl {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ul {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ol {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+.fineprint {
+    font-family:Arial, Helvetica; 
+    font-size:8pt;
+}
+
+.fineprint a {
+    color:#000099;
+    font-weight:bold;
+}
+
+code {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+pre {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+
+.note  { 
+	background-color: #f50000; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px #c50000; 
+}
+
+.term  { 
+	background-color: #f5f5f5; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px silver;
+	font-family: monospace,courier,fixedsys;
+	font-size: 8pt;
+}
+-->
+</style>
+    </head>
+
+    <body bgcolor="#ffffff" text="#000000" link="#000099" vlink="#cc3399" alink="#003399">
+        <table border="0" cellspacing="0" cellpadding="0" summary="Layout table">
+            <tr>
+                <td align="center"><a href="http://www.reportmagic.org/"><img src="images/title.gif" width="288" height="66" alt="Report Magic for Analog" border="0" /></a> </td>
+
+                <td rowspan="2" align="left" valign="top"><img src="images/logo.gif" width="138" height="150" alt="Documentation" /> </td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="top" width="291">
+                    <h1>Installing the Source Package on Mac OS X</h1>
+                </td>
+            </tr>
+        </table>
+        
+
+<h2>Installing Report Magic on Mac OS X Server</h2>
+
+<p>It should be fairly easy to install Report Magic from source on 
+Mac OS X 10.2 and later. You can use the <code>fink</code> command
+to install all the necessary packages including Report Magic itself.</p>
+
+<p>To start with you need to download the Report Magic fink script from the 
+<a href="http://reportmagic.org/addons.html">Report Magic Add-on's page</a>.</p>
+
+<p>You will have to enable support for "unstable" packaged to allow this to 
+work, as the lastest gd-pm package (used for graphics) are not classified as
+stable. You can do this from Fink Commander by selecting the "use unstable 
+preferences" option under the "fink" tab. If you are not using Fink Commander, 
+you can probably achieve this by adding "unstable/main" to the list on the 
+"Trees:" line in your <code>/sw/etc/fink.conf</code> file.</p>
+
+<p>Now use <code>fink</code> to install with this simple command:</p>
+
+<pre>
+	fink install rmagic
+</pre>
+
+<p>That should install all the dependent packages and have a working copy of
+Report Magic for you.</p>
+
+<h4>Testing The Installation</h4>
+<p>To test your installation, from the Command Prompt, change to the directory 
+where Report Magic was installed and run it:</p>
+
+<pre>
+	./rmagic.pl
+</pre>
+
+<p>This should build a set of sample reports in the folder <code>reports/</code>
+using the sample configuration and data included in the package. Check for any 
+error messages and look at the reports in your browser to make sure they look 
+right. If everything is as expected, you can begin 
+<a href="overview.html">building your own configuration</a>.</p>
+
+<h4>Documentation</h4>
+<p>Within the archive are documentation files in a folder called <code>docs</code>. 
+From your web browser open the file <code>index.html</code> to learn how to use 
+Report Magic. In the Report Magic directory is also a file called 
+<code>README</code>. Please see this file for last-minute changes.</p>
+
+ 
+        
+
+        <div style="text-align: center; border-top: 2px solid black; border-bottom: 2px solid black; margin-top: 4px; margin-bottom: 6px; padding-top: 4px; padding-bottom:6px;">
+            [<a href="index.html">Introduction</a>]&nbsp;[<a href="map.html">Documentation&nbsp;map</a>]&nbsp;[<a href="siteindex.html">Index</a>]&nbsp;[<a href="faq.html">Frequently Asked Questions</a>]&nbsp;[<a href="license.html">License</a>]
+        </div>
+        
+        <span class="fineprint">Send questions or comments to <a href="mailto:dgsupport@wadsack-allen.com">Wadsack-Allen Digital Group Support</a>.<br />
+         <a href="http://reportmagic.org/">Report Magic</a> 2.21 Documentation. Copyright &copy; 1999-2003 <a href="http://wadsack-allen.com/">Wadsack-Allen</a>. All Rights Reserved.</span>
+    </body>
+</html>
+
+
+
+

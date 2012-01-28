@@ -1,0 +1,155 @@
+INSTALLING REPORT MAGIC
+
+Installation
+
+The first time you install Report Magic can be somewhat complicated. Please 
+read through the instructions on this page completely before starting so you 
+have a good idea of what will be required. Because much of Report Magic is 
+built with reusable code, upgrades will be simple. For upgrade notes, see the 
+docs/whatsnew.html page. These instructions and the included Install.PL script 
+assume you are using a Unix-like system. If not, it is up to you to make the 
+necessary translations in the instructions and the Install.PL file to reflect 
+you computer's file system.
+
+To run Report Magic, you need to have Perl 5.004 or newer installed on your 
+system. You can find the version of Perl that you have by typing 'perl -v' at 
+the prompt. If the system says 'unknown command' you either do not have Perl 
+installed or it is not on your path. If you don't have it see 
+http://www.perl.com/ for details on getting the Perl interpreter. Compiled 
+binaries for Perl are available for almost every platform.
+
+Before installing for the first time, you will need to install some system 
+libraries if they aren't already installed. To generate the graphs, Report 
+Magic needs three libraries - zlib, libpng and libgd. If you want TrueType font 
+support in your graphs, you can also install the lttf TrueType library from 
+FreeType.
+
+zlib 
+    The zlib compression library can be acquired from http://www.gzip.org/zlib/. 
+    Download the source code archive and extract it. Read the 
+    installation documentation and the license. On most systems (Solaris is an 
+    exception) you will not have to build the zlib library if you don't want. 
+    When you build libpng, it incorporates the source files rather than the 
+    actual lib files. If you choose to build and install zlib (or your system 
+    requires that you do) Then do the standard install procedure: 
+
+            $ ./configure
+            $ make
+            # make install (as root)
+
+libpng 
+    Installing libpng is a little more complicated. You can acquire the latest 
+    version from http://download.sourceforge.net/libpng/. Look for something like 
+    'libpng-x.x.x.tar.gz', where x.x.x is the newest (i.e. highest) version 
+    number. Download this and extract it. Read the installation documentation 
+    and the license. You need to have the zlib, that you just uncompressed, on 
+    the same level as the libpng directory and they should both be named
+    without their versions. Your directory structure should look like this: 
+
+            |
+            +- zlib
+            |
+            +- libpng
+
+    Something like this should do it, but may differ from system to system. 
+    You'll have to remove the archive before doing this (rm *.tar or 
+    rm *.tar.gz depending on your tar version). You should choose one of the 
+    makefiles in the libpng/scripts directory according to your system (e.g. 
+    scripts/makefile.linux for Linux or scripts/makefile.sunos for Solaris).: 
+
+            $ mv zlib* zlib
+            $ mv libpng* libpng
+            $ cd libpng
+            $ cp scripts/makefile.stf Makefile
+            $ make
+            # make install (as root)
+
+freetype (Optional) 
+    If you want to allow support for TrueType fonts in your graphs you can 
+    install freetype. This library is not required for installation, but may be 
+    useful. (If you intend to output in Japanese or Polish, you will need this 
+    library installed. It is also helpful for Italian ouput.) You can download 
+    lttf from http://freetype.sourceforge.net/download.html. After reading the 
+    installation instructions and license, you can build it with the standard 
+    techinique: 
+
+            $ ./configure
+            $ make
+            # make install (as root)
+
+jpeg-6b
+    The jpeg-6b library may already be installed on your system. Check /lib, 
+    /usr/lib, and /usr/local/lib or your system's equivalents. If not it can 
+    be downloaded from the Independent JPEG Group at 
+    ftp://ftp.uu.net/graphics/jpeg/. After reading the installation 
+    instructions and license, you can build it with the following commands:
+
+            $ ./configure --enable-shared
+            $ make
+            $ make test
+            # make install (as root)
+
+libgd 
+    Installing libgd should then be straight-forward. Download the latest 
+    version from link at the top of http://www.boutell.com/gd/ and extract it. 
+    Read the installation documentation and the license. You will need to 
+    edit the Makefile to have it include support for jpeg or freetype. You may 
+    also have to add -I/usr/local/include/freetype to the INCLUDEDIRS= line to 
+    make it work with freetype-1.3.1. You can then build the library with the 
+    standard: 
+
+            $ make
+            # make install (as root)
+
+If all system libraries installed successfully, then the rest should be quite 
+simple. To install change to root user, change directory into the rmagic 
+directory where you uncompressed the Report Magic archive and type the 
+following command:
+
+        perl Install.PL
+
+If all goes well, this will load all the necessary Perl modules (that aren't 
+already loaded and up-to-date), install Report Magic in the directory 
+/usr/local/etc/httpd/rmagic/ (or similar directory with version number) and 
+install the documentation below that.
+
+If you want to install Report Magic elsewhere, simply edit the configuration 
+settings in the top of the Install.PL file.
+
+Autoloading the required perl modules from CPAN may require several more steps. 
+First, this uses the CPAN module to load modules from CPAN. You will need to 
+configure this the first time it runs by answering serveral questions. It also 
+requires that you are connected to the Internet (or a local CPAN mirror if you 
+have such and your CPAN module has been configured for such). Second, using 
+this may be a security risk. There is no signature system for CPAN code. It is 
+possible (though unlikely) that CPAN downloads may have been tampered with. If 
+this bothers you, don't run this part of the install. Instead install all the 
+modules by hand (see below). (Although, this still could contain tampered 
+modules, but at least you can look at all the sources first before you put them 
+in your Perl site library.)
+
+When configuring your CPAN setup, you will be asked for the URL of your 
+favorite CPAN site. On some systems this includes a list to choose from, on 
+some it doesn't. If no list is presented, you can type in 
+'ftp://ftp.cpan.org/CPAN'.
+
+While the install script is running, watch carefully for any errors. The script 
+will continue to try to install all necessary Perl even if some fail. This may 
+mean that other will fail later (because of dependencies). Also, the latest 
+version of GD will ask you some question about the way libgd was installed on 
+your system.
+
+If you don't want to auto-load the latest version of the necessary Perl modules, 
+use this instead:
+
+        perl Install.PL -no_modules
+
+If you just want to auto-load the latest version of the necessary Perl modules, 
+but don't want to move Report Magic (i.e. you will run it from the directory 
+you unarchived it into) use this instead:
+
+        perl Install.PL -only_modules
+
+
+For instructions on manually install Perl modules, see docs/inst_src.html.
+

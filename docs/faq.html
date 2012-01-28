@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1" />
+        <meta name="AUTHOR" content="This page created by Wadsack-Allen Digital Goup" />
+        <title>Report Magic for Analog Documentation - Frequently Asked Questions</title>
+<style type="text/css">
+<!--
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+a {
+    text-decoration:normal;
+}
+
+h1 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:24pt; 
+    font-weight:bold;
+}
+
+h2 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:18pt; 
+    font-weight:bold;
+}
+
+h3 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:16pt; 
+    font-weight:bold;
+}
+
+h4 {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:14pt; 
+    font-weight:bold
+}
+
+dl {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ul {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ol {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+.fineprint {
+    font-family:Arial, Helvetica; 
+    font-size:8pt;
+}
+
+.fineprint a {
+    color:#000099;
+    font-weight:bold;
+}
+
+code {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+pre {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+
+.note  { 
+	background-color: #f50000; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px #c50000; 
+}
+
+.term  { 
+	background-color: #f5f5f5; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px silver;
+	font-family: monospace,courier,fixedsys;
+	font-size: 8pt;
+}
+-->
+</style>
+    </head>
+
+    <body bgcolor="#ffffff" text="#000000" link="#000099" vlink="#cc3399" alink="#003399">
+        <table border="0" cellspacing="0" cellpadding="0" summary="Layout table">
+            <tr>
+                <td align="center"><a href="http://www.reportmagic.org/"><img src="images/title.gif" width="288" height="66" alt="Report Magic for Analog" border="0" /></a> </td>
+
+                <td rowspan="2" align="left" valign="top"><img src="images/logo.gif" width="138" height="150" alt="Documentation" /> </td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="top" width="291">
+                    <h1>Frequently Asked Questions</h1>
+                </td>
+            </tr>
+        </table>
+        
+
+
+<!--
+  Filters, aliases, columns, reports .... Analog docs
+  
+  Where are my visitors? webworks.html
+  
+  [unresolved numerical address] ... DNS WRITE
+  
+  what is a "request for pages"? do I have page-views?
+  
+  what do these reports mean?
+  
+-->
+
+<h3>How do I do (some feature) in Analog?</h3>
+
+<p>Look at the <a href="http://www.analog.cx/docs/">Analog documentation</a>. 
+It's there. Really. If you can't figure it out or can't find it, try joining 
+the <a href="http://www.analog.cx/docs/mailing.html">Analog-help</a> mailing 
+list and posting your question there.</p>
+
+
+<h3>I get a GD error when I try to run Report Magic</h3>
+<h3>or, GD won't build when I try to install Report Magic</h3>
+<h3>or, libgd won't build. It can't find 'jpeg' (or other resource).</h3>
+
+<p>As described in the <a href="inst_src.html">Source Package Installation
+instructions</a>,you must install libgd before you can install GD (the Perl 
+module). You must install GD before Report Magic will run. When installing 
+libgd, you will likely need to edit the Makefile for the gd library to 
+tell it which optional components (TTF support, Jpeg support, XPM support) 
+should be added. When you build GD, it now asks you which of these options 
+you built libgd with. Please remeber the options and answer accordingly. 
+It should build without issue thereafter.</p>
+
+
+<h3>The "Most Active" quantity in my time reports not right</h3>
+
+<p>The Most Active entry will list the last line of the report whether 
+or not it appears to be most active, if you have set your Active_Column 
+to a column that is not in the report. For example, if your report 
+only show columns for page request (P) and percent of page requests 
+(p), then set the Active_Column for that report (or all your reports) 
+to P or p.</p>
+
+
+<h3>Why don't I get any pie charts?</h3>
+
+<P>When configuring Report Magic, you set the column that you consider 
+the most important as the <code>Active_Column</code> in your settings file. 
+That is, if you are concerned about the number of pages requested and sent 
+on your servers, you would set <CODE>[reports]</CODE> 
+<CODE>Active_Column</CODE> to 'P'. This tells Report Magic what column to 
+graph, in each report that has a graph, and what column to track for 
+summaries in the <B>Quick Summary</B> report. If you aren't getting pie charts 
+then Analog isn't producing 'Percent of page' (or Percent of Request or Percent 
+of Bytes) data. Change this either by adding a <code>Active_Column</code> 
+section specific to the offending report in that report's section, or by 
+modifying your Analog config file to include both 'P' and 'p' 
+(or 'R' and 'r' or 'B' and 'b') in the *COLS commands for the reports in 
+question.</P>
+
+
+<h3>I'm still confused about how Report Magic decides what charts to build. 
+Can you elaborate?</h3>
+
+<p>Report Magic determines it's charts based on the 
+<a href="repconf.html#graphttype"><code>GraphType</code></a>
+setting, the <code>ActiveColumn</code> setting and the available columns 
+of data.</p>
+
+<p><code>GraphType</code> takes a comma-separated list of types of
+graphs that you want Report Magic to produce for the report. Valid
+values are <code>pie</code>, <code>bar</code> and <code>line</code>.</p>
+
+<p><code>ActiveColumn</code> takes a single character representing
+the column to chart: P, B, or R.</p>
+
+<p>The value of <code>ActiveColumn</code> is case-insensitive. So if
+you set it to p, b, or r, you should get the same charts you do when
+set to P, B, or R.</p>.
+
+<p>To get both a bar and a line chart, simply set your <code>GraphType</code> 
+value like this:</p>
+<pre>
+   GraphType = bar,pie
+</pre>
+
+<p>If your data contains both the count and percent values for the column
+you have chosen in your ActiveColumn (e.g. if you have <code>ActiveColumn=R</code>
+and your data has both R and r columns) then you will get both charts. Otherwise 
+it will only plot the chart that it has data for.</p>
+
+
+
+<h3>Why don't my bullets show up in the navigation page?</h3>
+
+<p>The bullets are images specified by the <code>Bullet_Image</code> 
+setting in the <code>[navigation]</code> section of your configuration file. 
+This setting should point, virtually, to the bullet image, relative to the 
+completed navigation page. In other words, whatever you put in here 
+(say, "image/bar1.gif") end up as the SRC attribute of the IMG tag for the 
+bullet. So when the navigation page is loaded by your browser it looks for the 
+file relative to that page. (If the navigation page is in "/stats/navfile.html" 
+as specified by the <code>File_Out</code> setting in the <code>[navigation]</code> 
+section, then the image above should be in your website area in "/stats/images/bar1.gif".)</p>
+
+
+<h3>Other Questions</h3>
+
+<p>For questions not answered here or in the docs or suggestions for future 
+versions, please try the Report Magic Help mailing list. See 
+<a href="http://www.reportmagic.org/lists.html">the Report Magic mailing lists page</a>
+for information on joining.</p>
+
+ 
+        
+
+        <div style="text-align: center; border-top: 2px solid black; border-bottom: 2px solid black; margin-top: 4px; margin-bottom: 6px; padding-top: 4px; padding-bottom:6px;">
+            [<a href="index.html">Introduction</a>]&nbsp;[<a href="map.html">Documentation&nbsp;map</a>]&nbsp;[<a href="siteindex.html">Index</a>]&nbsp;[<a href="faq.html">Frequently Asked Questions</a>]&nbsp;[<a href="license.html">License</a>]
+        </div>
+        
+        <span class="fineprint">Send questions or comments to <a href="mailto:dgsupport@wadsack-allen.com">Wadsack-Allen Digital Group Support</a>.<br />
+         <a href="http://reportmagic.org/">Report Magic</a> 2.21 Documentation. Copyright &copy; 1999-2003 <a href="http://wadsack-allen.com/">Wadsack-Allen</a>. All Rights Reserved.</span>
+    </body>
+</html>
+
+
+

@@ -1,0 +1,58 @@
+x	HN	[my organisation]
+x	PS	1999	05	20	09	18
+x	FR	1998	05	31	10	11
+x	LR	1998	06	03	12	11
+x	SR	42
+x	PR	42
+x	NF	2
+x	NH	1
+x	BT	51828
+m	RP	11	11	1998	05
+m	RP	31	31	1998	06
+d	RP	11	11	Sun
+d	RP	10	10	Mon
+d	RP	11	11	Tue
+d	RP	10	10	Wed
+d	RP	0	0	Thu
+d	RP	0	0	Fri
+d	RP	0	0	Sat
+h	RP	0	0	0
+h	RP	0	0	1
+h	RP	2	2	2
+h	RP	2	2	3
+h	RP	2	2	4
+h	RP	2	2	5
+h	RP	2	2	6
+h	RP	2	2	7
+h	RP	2	2	8
+h	RP	2	2	9
+h	RP	4	4	10
+h	RP	2	2	11
+h	RP	4	4	12
+h	RP	0	0	13
+h	RP	2	2	14
+h	RP	2	2	15
+h	RP	0	0	16
+h	RP	2	2	17
+h	RP	2	2	18
+h	RP	0	0	19
+h	RP	2	2	20
+h	RP	2	2	21
+h	RP	2	2	22
+h	RP	2	2	23
+o	f	0B	b
+o	Rb	42	100.000	.uk (United Kingdom)
+i	f	0.010000%B	b
+i	Rb	42	100.000	[root directory]
+t	f	0.100000%B	b
+t	Rb	42	100.000	.html [Hypertext Markup Language]
+z	Rb	0	0.000	0
+z	Rb	0	0.000	1b-  10b
+z	Rb	0	0.000	11b- 100b
+z	Rb	0	0.000	101b-  1kb
+z	Rb	42	100.000	1kb- 10kb
+c	f	0R	a
+c	R	42	200 OK
+r	f	20R	r
+r	RbD	21	50.000	1998	06	01	12	11	/sample.html
+r	RbD	21	50.000	1998	06	03	12	11	/sample2.html

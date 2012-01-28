@@ -1,0 +1,590 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1" />
+        <meta name="AUTHOR" content="This page created by Wadsack-Allen Digital Goup" />
+        <title>Report Magic for Analog Documentation - History of Changes in 2.x</title>
+<style type="text/css">
+<!--
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+a {
+    text-decoration:normal;
+}
+
+h1 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:24pt; 
+    font-weight:bold;
+}
+
+h2 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:18pt; 
+    font-weight:bold;
+}
+
+h3 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:16pt; 
+    font-weight:bold;
+}
+
+h4 {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:14pt; 
+    font-weight:bold
+}
+
+dl {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ul {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ol {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+.fineprint {
+    font-family:Arial, Helvetica; 
+    font-size:8pt;
+}
+
+.fineprint a {
+    color:#000099;
+    font-weight:bold;
+}
+
+code {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+pre {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+
+.note  { 
+	background-color: #f50000; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px #c50000; 
+}
+
+.term  { 
+	background-color: #f5f5f5; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px silver;
+	font-family: monospace,courier,fixedsys;
+	font-size: 8pt;
+}
+-->
+</style>
+    </head>
+
+    <body bgcolor="#ffffff" text="#000000" link="#000099" vlink="#cc3399" alink="#003399">
+        <table border="0" cellspacing="0" cellpadding="0" summary="Layout table">
+            <tr>
+                <td align="center"><a href="http://www.reportmagic.org/"><img src="images/title.gif" width="288" height="66" alt="Report Magic for Analog" border="0" /></a> </td>
+
+                <td rowspan="2" align="left" valign="top"><img src="images/logo.gif" width="138" height="150" alt="Documentation" /> </td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="top" width="291">
+                    <h1>History of Changes in 2.x</h1>
+                </td>
+            </tr>
+        </table>
+        
+
+<p>For changes that resulted in the current version see 
+<a href="whatsnew.html">What's New</a>.</p>
+
+<h2>2.16</h2>
+<h3>New Features</h3>
+<ul>
+<li>Graph 'width,' 'height' and '3d' settings can be specified for each report
+    (Patch provided by Grant McLean)</li>
+<li><code>Top_Logo</code> setting in the [navigation] section allows a 
+    logo (or other HTML) to be placed at the top of the navigation page.</li>
+<li>Default settings file can now be either in the current working directory 
+    (as before) or in the directory where Report Magic is installed.</li>
+</ul>
+
+<h3>Bugs Fixed</h3>
+<ul>
+<li>Fixed a bug where the Windows Edition didn't find script when called as 'rmagic' rather
+  than 'rmagic.exe'.
+  (Reported by Henk Schick, Mike Schwarz, Curt Troutwine, etc. Fix found by Henk Schick)</li>
+<li>Fixed default navigation styles so text doesn't shift under IE when mouse scrolls
+    over Bullet_Image.</li>
+<li>Removed the non-breaking space after bullet image because it's no longer necessary.</li>
+<li>Improved documentation on <code>GraphType</code>, <code>ActiveColumn</code> and 
+    graphing details.</li>
+<li>Added a hyperlink to the Analog logo. 
+    (Suggested by Javier Alcobendas)</li>
+<li>Fixed "&lt;b&gt;" that was showing up in graphs.
+    (First mentioned by Heinz Toedter)</li>
+<li>Changed Status code report to point to HTTP/1.1 spec.</li>
+<li>Minor updates to French language files.
+    (From Raphael Goubet)</li>
+<li>Fixed bug where Number of Bytes Transferred in Last 7 Days column was not 
+    formatted as a byte value.</li>
+<li>Added Show_Bytes_As setting to allow bytes to be shown in MB (or whatever) in 
+  addition to the fully recuded format.
+  (Suggested by conversation with Garrett Bartley)</li>
+<li>Fixed GeneralSummary to use Formatter for byte formatting</li>
+</ul>
+
+
+<h2>2.15</h2>
+
+<h3>Bugs Fixed</h3>
+<ul>
+<li>Fixed '.gif' file names in Install.PL.
+    (reported by David Rogers, Ian Sealy, Thomas Enzeley Conlin, and Herb Schilling)</li>
+<li>Fixed number formatting bug in hierarchical reports.</li>
+<li>Removed &lt;pre&gt; formatting in range reports.</li>
+<li>Fixed bug where dates were double formatted. 
+    (reported by Curt Troutwine IV)</li>
+<li>Fixed bug where broken images occurred when <code>Active_Column</code> was not
+    present in data set for the report.</li>
+<li>Changed Analog / Report Magic links when <code>Company_Logo</code> is present
+    to be less conspicuous.</li>
+<li>Increased default navigation menu text by 1pt for readability on Mac with Netscape.
+    (suggested by Scott Richardson)</li>
+</ul>
+
+
+<h2>2.14</h2>
+
+<h3>Bugs Fixed</h3>
+<ul>
+<li>Fixed wrong location of <code>Reverse_Time</code> in rmagic.sample.
+    (reported by Blake Kadatz, Dave Green, Tim Mrock and Andre S. Burton)</li>
+<li>Updated <code>INSTALL</code> file in <strong>Source Edition</strong> to match documentation.
+    (reported by David Simmons)</li>
+<li>Updated download sites and library names in <code>docs/inst_src.html</code> and 
+    <code>INSTALL</code>.</li>
+<li>Added NONE to available 'locations' for the navigation.
+    (requested by Duncan McQueen)</li>
+<li>Fixed bug where non-priviliged users couuld not run <strong>Source Edition</strong>
+    from a location where they did not have access to walk the directory tree to the root.</li>
+<li>Fixed formatting problems in decimal numbers and other issues.
+    (reported by Joerg Kock)</li>
+<li>Fixed a bug in decimal values and rounding of byte values. <strong>Note</strong> that 
+    previously Report Magic may have over-reported byte values by 100 times.</li>
+<li>Fixed a bug where graphs might not be generated (broken link in reports) under
+    certain circumstances in any edition of 2.13.
+    (reported by Curt Troutwine IV, Doug Hart, and Konrad DeRuttie)</li>
+<li>Fixed bug where numeric search words were formatted as numbers in Quick Summary.</li>
+<li>Added left alignment for all columns for work-around to IE6 bug.
+    (reported by David Phillips)</li>
+<li>Fixed uppercase alignement and other attributes that were not XHTML compliant.</li>
+<li>Fixed a bug where a blank <code>Bullet_image</code> setting would cause a broken image icon.
+    (reported by Heinz Toedter)</li>
+<li>Fixed formatting of numbers in graph so large numbers of bytes are listed properly.
+    (reported by Garrett Bartley and others)</li>
+<li>Fixed a bug where a <code>Stylesheet</code> setting in the <code>[navigation]</code> 
+    section of a settings file included with the <code>Include</code> setting would not be 
+    loaded if there was already a <code>Stylesheet</code> defined for the <code>[reports]</code> 
+    section.
+    (reported by Michael Check)</li>
+<li>Changed Analog and Report Magic logos to PNG format.</li>
+<li>Added a bar chart to the Processing Time report.</li>
+</ul>
+
+
+<h2>2.13</h2>
+<h3>Bugs Fixed</h3>
+<ul>
+<li>Changed Brazilian Portuguese langauge file from pt/br to pt-BR (portable
+to all environments).</li>
+<li>Patched character set conversion to only convert if the character set is
+iso-8859-1.</li>
+<li>If General Summary lines are missing in report data, then some text may 
+be excluded (like "Statistics generated on...") rather than included with 
+no useful data.</li>
+<li>Fixed a bug where 0 bytes would be formatted as 'B' rather than '0 B.'</li>
+<li>Fixed bug in floor statements where numeric parameters were not replaced.</li>
+<li>Fixed bug where REPORTSPAN times were getting double formatted.</li>
+<li>Fixed bug where 2d graphs didn't include background color, when defined.</li>
+</ul>
+
+
+<h2>2.12</h2>
+<h3>New Features</h3>
+<ul>
+<li>Navigation page now rendered with a layout table so that wrapped labels will be indented 
+right of the bullet.</li>
+<li>Changed the hover effect for the links on the navigation page to italic rather than bold 
+so the flow won't change when hovering.</li>
+</ul>
+<h3>Bugs Fixed</h3>
+<ul>
+<li>Fixed bug in averages where byte totals were off by factor of 10 sometimes.</li>
+<li>Fixed bug where time reports with 1 row and Analog 4.x data would crash.</li>
+<li>Fixed bug where time summary did not count all hours in Hourly Summary.</li>
+<li>Fixed bug where NO ROBOTS tag and Stylesheet were not included in report pages.</li>
+</ul>
+
+<h2>Version 2.11</h2>
+<h3>New Features</h3>
+<ul>
+<li>Reads Analog data files from other platforms.</li>
+<li>Implemented <code>div</code> tags in navigation to make it more compliant.</li>
+<li>Stylesheet files for navigation can now define a <code>navitem</code> class.</li>
+<li>Added byte formatting in General Summary.</li>
+<li>Bundled derivative licenses for binary versions.</li>
+</ul>
+<h3>Bugs Fixed</h3>
+<ul>
+<li>Verfied not susceptible to [1]CA-2000-02 and related exploits.</li>
+<li>Fixed charset in <code>lang/en/lang.ini</code> and <code>de</code> to iso-8859-1.</li>
+<li>Rounded averages in time reports to integer.</li>
+<li>Fixed bug where Frame_Border was producing wrong settings in some cases.</li>
+<li>Fixed bug where HOSTURL without final '/' wasn't linked.</li>
+<li>Patched average bug reported by Bernd Becker -- was dividing by # rows + 1.</li>
+<li>Patched up lots of warnings to improve performance / stability. <b>NOTE to Source 
+Package Users</b>: <code>Config-IniFiles-2.26</code> (or later) is needed for warning-free use.</li>
+<li>Patched bug where TTF fonts in graphs were autoloading report section settings 
+and trying to set the point-size to a non-numeric font name.</li>
+<li>Fixed bug in <code>lang/en/cdata.ini</code> with non-comment on Width line in [f].</li>
+<li>Fixed bug reported by Michael Guitton where Summaries in TimeSummary were being 
+formatted as data items on column -1.</li>
+<li>Fixed die when there was no data to graph as reported by Christophe Simonin.</li>
+<li>Fixed bug where day of the week in date format was incorrect.</li>
+<li><b>Source Package Users</b>: Disabled auto-update of CPAN.pm because it loads Perl 5.6.1.</li>
+<li>Changed XHTML flavor to Transitional for frame support.</li>
+</ul>
+
+
+<h2>Version 2.10</h2>
+<h3>New Features</h3>
+<ul>
+<li>Analog 5 compatability</li>
+<li>Set frameset border width</li>
+<li>Formatting code improvements</li>
+<li>Sample stylesheet included</li>
+<li>GNU Long-style command-line syntax supported</li>
+<li>Portuguese (pt) language files</li>
+</ul>
+<h3>Bugs Fixed</h3>
+<ul>
+<li>Fixed bug where https://... was not linked in referrer reports.</li>
+<li>Fixed bug where Netscape was not getting style changes for some elements.</li>
+<li>Changed all references from reportmagic.com to reportmagic.org.</li>
+<li>Patched formatter to remove lots of warnings and not format formatted data.</li>
+<li>Fixed missing Analog version from older data files.</li>
+<li>Fixed bug where space after <code>GraphType</code> caused space in filenames.</li>
+<li>If no <code>Active_Column</code> is set, then it uses the sort order of the report.</li>
+<li>Fixed formatting so that weekdays 'www' can be used in date formatting codes.</li>
+</ul>
+
+
+<h2>Version 2.05</h2>
+<h3>Bugs Fixed</h3>
+<ul>
+<li>Fixed a bug in the parser that choked on new columns in Analog 4.90Beta1.</li>
+<li>Fixed a bug in the navigation menu that showed extra line for unkown reports.</li>
+<li>Fixed a bug that could cause Report Magic to fail when creating new directories.</li>
+<li>Fixed a bug that caused Report Magic to fail when creating new directories from 
+insertion codes like <code>-reports_File_In=%yyyymmdd%/</code>.</li>
+<li>Fixed a bug where the last report wasn't closing in mulit-file mode.</li>
+<li><b>Source Package</b> <code>Install.PL</code> now properly shows the location of 
+documentation when installed with <code>-only_modules</code> option. It also supports 
+command line parameters in the format <code>--only-modules</code>.</li>
+<li>Updates to English, Swedish, Catalan and Italian lanuage files for the new 
+reports and columns in Analog 4.90Beta1. <b>There are some caveats:</b></li>
+	<ul>
+	<li>You will get "Unknown column [*_]" warnings for the new rows in the Analog files.</li>
+	<li>Many reports will have a second table at the bottom that corresponds to this new row.</li>
+	<li>The Hour of the Week Summary is not formatted, yet.</li>
+	<li>The Quarter-Hour and Five-Minute Summaries are not formatted, yet.</li>
+	</ul>
+<li>Fixed bugs in parsing stylesheets that contained selectors like "class elm."</li>
+<li>Updated formatting tools for better localization support.</li>
+<li>The License has changed. See <a href="license.html">here</a> for new terms.</li>
+</ul>
+
+<h2>Version 2.04</h2>
+<h3>Bugs Fixed</h3>
+<ul>
+<li>Several language files had wrong file types in Mac edition.</li>
+<li><b>Source Package</b> The Config::IniFiles module version 2.13 had a 
+bug that caused Report Magic to fail. This is fixed in newer versions. 
+Source package users should make sure to update Config::IniFiles (this 
+will be done automatically by Install.PL).</li>
+<li>Added a check and message to note when the input file is in HTML 
+not COMPUTER format. Previously you would get an out of memory error.</li>
+<li>Improved documentation regarding order of precedence in stylesheets and 
+style settings.</li>
+<li>Some of the Chinese language files were missing. These are now included.</li>
+<li>Fixed several HTML element problems in HTML 3.2 mode that caused strict 
+parsers (like tidy) to produce errors.</p>
+</ul>
+
+<h2>Version 2.03</h2>
+<ul>
+<li>You can specify which hierarchical report level to graph with the <code>Graph_Level</code> 
+setting in the <code>[reports]</code> section of your settings file</li> 
+<li>Changed rmagic.sample to Unix line format, not DOS.</li>
+<li>Fixed <code>docs/inst_src.html</code> to show <code>enable_shared</code> not 
+<code>with_shared</code> as the jpeg configuration option.</li>
+<li>Fixed documentation to show <code>Reverse_Time</code> in <code>[reports]</code> section.</li>
+<li>Fixed a bug in single-file (non-framed mode) where a target was 
+specified for links when it should not have been.</li>
+<li>Added a potential problem in the "Most Active" row to the FAQ.</li>
+<li>(Source Package) Install.PL will now take a destination as the last argument 
+not starting with a '-'. This means you no longer have to edit the file to choose 
+the install location, rather you can simply specify '
+<code>./Install.PL /usr/local/rmagic-$(VERSION)/</code>.' You can include the 
+<code>$(VERSION)</code> key on the command line as well as in the file. If you 
+specify a destination this way, documentation will be installed in 
+<code>$DEST/docs/</code> regardless of the settings at the top of Install.PL.</li>
+<li>(Source Package) Install.PL now boostrap updates CPAN.pm if necessary before 
+loading anything else.</li>
+<li>(Source Package) Added HTML::Tagset to the list of modules as it is now a 
+prerequisite for HTML::Parser package.</li>
+<li>(Source Package) Improved error handling and notification in Install.PL. 
+Installation will now quit and notify you if any error occurs while installing 
+a Perl module or one of the source files. This should make it easier to see 
+where the problems are and work on them one at a time.</li>
+<li>Changed alt text on logos so that it's shorter and more to the point.</li>
+<li>Included details on setting Work Hours in the Hourly Summary in the 
+<a href="advanced.html">Advanced Settings</a> section of the documentaion.</li>
+<li>Changed the method Report Magic internally uses to determine if you are 
+writing a single file or multiple file report. This has no effect on the use 
+of Report Magic, except that it should be a more accurate guess in the case 
+of sloppy punctuation.</li>
+<li>Fixed a bug where paths with 'top' and other keywords in them did not 
+produce output files. Report Magic no properly distinguishes between keywords 
+and paths or filenames in all instances.</li>
+<li>Changed the font 'Sans Serif' to 'sans-serif' in all files</li>
+<li>Added notes to <a href="advanced.html">Advanced Settings</a> to describe 
+how to change linking in reports.</li>
+<li>Font names with spaces in are quoted when written to a stylesheet.</li>
+</ul>
+
+<h2>Version 2.02</h2>
+<ul>
+<li>Fixed a bug where Stylesheet setting was overriding style settings.</li>
+<li>Fixed a bug where General Summary and Quick Summary weren't loading 
+    some of their defaults properly. This requires the latest version of 
+    Config::IniFiles on the source package.</li>
+<li>Fixed more bugs in Install.PL regarding sample files.</li>
+<li>Fixed a bug when Quick Summary was enabled in single file mode.</li>
+<li>Fixed a bug where Rows=ALL was not recognized in General Summary configuration.</li>
+<li>Added notes in inst_src.html in the documentation for building libgd/</li>
+<li>Fixed a file corruption bug in single file mode with Quick Summary.</li>
+</ul>
+
+<h2>Version 2.01</h2>
+<ul>
+<li>Fixed a bug in single file mode that caused memory corruption</li>
+<li>Fixed Install.PL on source package with the proper version number 
+and right logo files</li>
+<li>Fixed bug where default styles were set by RM when Stylesheet was 
+set but  no style settings were given</li>
+<li>Fixed bug where a blank line in the COMPUTER output made Report Magic 
+think it had reached a FOOTER and stop parsing content</li>
+<li>Improved clarity in documentation regarding the Stylesheet parameter</li>
+</ul>
+
+<h3>Version 2.0</h3>
+<ul>
+<li>Changed bar graphs so that all bars a labelled.</li>
+<li><code>[graphs] Format</code> is now correctly case insensitive.</li>
+<li><code>[graphs] Format</code> JPEG and JPG are eqivalent.</li>
+<li><code>[statistics] Log_File</code> now properly support date insertion and <code>${infile}</code> insertion.
+  It DOES NOT support other <code>${XX}</code> insertions. It also uses the current system date
+  for date insertions (as the <code>[statistics] File_In</code> does) not the end date of the data.</li>
+<li>Fixed bug where most active summary was not formatted right.</li>
+<li>Graphs can be individually set to '<code>lines2d</code>' to force just that report to use 2d 
+  graphs. '<code>line2d</code>' or '<code>line3d</code>' specifies an absolute. '<code>line</code>' 
+  is determined by the <code>[graphs] 3d</code> setting.</li>
+<li>Bundle now include <code>rmagic.sample</code> and <code>sample.dat</code>. This will run with default 
+  settings and produce a report in <code>reports/</code>. You can customize this by copying 
+  it to rmagic.ini and adjusting your settings as desired.</li>
+<li>Several rendering bugs and improvements were made to the graphing modules</li>
+<li>Fixed bug in missing active column for pie charts. No longer warns if data in unavailable.</li>
+<li>Directory report is no longer linked by default. If you want to have directories
+  linked for some reason, add "<code>[DIRECTORY]IncludeLinks = */,[root directory]</code>" 
+  to your settings file.</li>
+</ul>
+
+
+<h3>Version 1.99Beta2</h3>
+<ul>
+<li>Moved sanity check in File_In/%infile% to Settings.pm.</li>
+<li>Fixed where ${infile} could slip through sanity checks.</li>
+<li>Fixed bug in detecting and returning errors on invalid settings files.</li>
+<li>Fixed bug where Stylesheet settings weren't loaded properly.</li>
+<li>Fixed a bug where new Bullet_Image setting wasn't being read.</li>
+<li>Fixed several bugs in STDOUT mode.</li>
+<li>Put header and prefix back in message function, rather than formatMessage.</li>
+</ul>
+
+<h3>Version 1.99Beta1</h3>
+<ul>
+<li>Added [d], "Date of last access", to cdata.ini file.</li>
+<li>Added units to the General Summary.</li>
+<li>Moved formatting of date items in GeneralSumary to their field
+  specs in cdata.ini.</li>
+<li>Changed date formatting codes to use date of last request rather than current date
+  EXCEPT for the input file. [statistics]File_In, if it contains date formatting codes,
+  will be interpreted with the date the program is run on.</li>
+<li>Comlpeted total rewrite of Report Magic so it is object oriented. This 
+  should improve performance significantly and make future enhancements
+  easier to implement.</li>
+<li>Now recognizes unparsable date values in D and d columns and refuses to format 
+  or parse them, but does so gracefully.</li>
+<li>Localized the decimals in the Processing Time Report</li>
+<li>Now tries to properly handle undefined or null date columns in Analog 4.1 and earlier.</li>
+<li>Object oriented approach makes ReportTypes extensible; however, they are also, now, 
+  case sensitive. ReportType values can be a single word (in which case it's searched for in  
+  the wadg::rm::Report or root namespace) or it can be a fully qualified perl class (e.g. 
+  company::reports::InternalReport). All valid reports must subclass wadg::rm::Report.</li>
+<li>General Summary no longer needs to be first report; however, Report 
+  Magic still requires the General Summary to be included or it won't 
+  be able to parse the data file.</li>
+<li>Report Magic now understands and parses Analog HEADER and FOOTER content.
+  This content is added to the top and bottom of the report file or files.</li>
+<li>Added additional filter information to handle 'all' (0r) and 
+  'single' (1b) cases.</li>
+<li>Filters are formatted more cleanly (less HTML overhead).</li>
+<li>Rearranged report information order to put filter info first, then do 
+  graphs, then data tables.</li>
+<li>Moved Active_Column to [reports] and it's derivative section so that 
+  it can be set for each one.</li>
+<li>Added average summaries to time reports.</li>
+<li>Handle N and l columns more portably by settings in cdata.ini
+  e.g. [N]Type=Number; [l]Type=Level.</li>
+<li>Added NumberFormat to cdata.ini to specify which columns show percent data.</li>
+<li>Implemented a bunch of new options in new [graphs] section including
+  2d/3d, fg color, bg color, width, height.</li>
+<li>Add support for outputing in JPEG (though the file will be large...)
+  in the [graph]Format setting. This can also be gif, but that's not
+  supported without Image::Magick on your system and you're on your own 
+  installing that.</li>
+<li>Wrote Config:IniFiles update (from InoConf.pm) to support a tied 
+  hash interface and importing settings from an existing object.</li>
+<li>Wrote wadg::HTMLWriter object to allow encapsulation of HTML output
+  methods regardless of output spec type (e.g. HTML 3.2, 4.0 or XHTML 1.0).</li>
+<li>Deprecated 'conf' and 'cfg' file formats. Report Magic now only 
+  accepts and understands 'ini' file formats and the command-line interface.</li>
+<li>Convert to CSS (XHTML 1.0/Strict) with option for older HTML 3.2implemented 
+through the [statistics]Format setting. In HTML 3.2 output, all styles are 
+conveted to equivalent, valid elements to achieve (almost) the same display.</li>
+<li>Added new 'stylesheet' setting to 'reports' and 'navigation' to allow
+  complete control over the styles used in the output of the pages.</li>
+<li>Created a new [graphs] section
+	<ul>
+	<li>Moved Graph_Font for [graphs]Font</li>
+	<li>Ability to specify graph size with Width and Height</li>
+	<li>Selectable 2d/3d graphs: 3d is default 3D = 0 is off.</li>
+	<li>Set graph colors (foreground, background) (Font_Color,BG_Color)</li>
+	<li>Set graph colors for set/data palette (Palette)</li>
+	<li>Cycle colors on or off (cycle_Colors)</li>
+	<li>Shadows on or off {Drop_Shadows}</li>
+	<li>Differentiate graph and image background: BG_Color in [graphs] vs [reports]</li>
+	</ul></li>
+<li>Added FONT and FONT_COLOR items to Data_* settings [ST]. 
+  WARNING: Use of this with the HTML 3.2 output option can cause RM to create HUGE files!</li>
+<li>If no [website]Title is given then a default message like "Website 
+  statistics for HOST NAME" is used.</li>
+<li>Added inheritance to rdata/cdata/lang files. First place is the default (. or lang/en/), then 
+  whatever language is added then site. This should make maintaining language files easier.</li>
+<li>Summary rows in daily and hourly summaries are now defined in rdata.ini rather 
+  than hard-coded [ST]. This is implemented with a simple matching mechanism and
+  appropriate label for the row.</li>
+<li>For boolean settings, the following case-insensitive settings are equivalent
+  (YES,ON,TRUE,[non-zero value]) == 1 and (NO,OFF,FALSE,NONE) == 0.</li>
+<li>The insertion code and %infile% has been renamed ${infile}. Old codes will
+  still work, but please start using the new format. It makes more sense...</li>
+<li>Insertion codes have been expanded to include the folowing values, in addition 
+  to date formatting:
+  <pre>
+	${infile}	This is the new way to specify the name of the input file.
+	${XX}	Where XX is the any field on the General Summary
+	${GenerationTime}	This is the Analog PS field, but formatted with lang.ini value [Text]O0008
+	${DataStart}	This is the Analog FR field, but formatted with lang.ini value [Text]O0008
+	${DataEnd}	This is the Analog LR field, but formatted with lang.ini value [Text]O0008
+	${AnalogVersion}	This a synonym for the Analog VE field
+  </pre></li>
+<li>The Header and Footer from Analog are now parsed for insertion codes.
+<li>Added a pie chart for the OS, Organization, and Domain Reports. Removed 
+  the bar chart from the Status Code report.</li>
+<li>NOTE: When using XHTML 1.0 output, any styles defined in the stylesheet
+  settings or created with conventional settings will be applied to 
+  imported HEADER and FOOTER context. This will not happen in HTML 3.2 
+  output.</li>
+<li>PERFORMANCE NOTES: Running XHTML output is about 40% faster and 
+  uses 40% of the disk space of HTML 3.2. (Of course this depends on 
+  the number of settings for fonts and colors, the more settings the 
+  largers the HTML 3.2 becomes and the longer it takes to create it.
+  XHTML is hardly affected by additional colors and fonts.)</li>
+<li>Changed default palette to 
+  9999CC, CCCC66, 339900, 990000, FFCC33, 996699, 6699FF, 0066CC, FF9900, 666699</li>
+<li>NOTE: Using TTF in graphs significantly affects performance!</li>
+<li>Added [MONTHLY], [DAILY], [FULLDAILY], etc. report section capabilities 
+  to rmagic.ini to allow rdata.ini settings to be set in rmagic.ini under 
+  corresponding report section.</li>
+<li>Allowed [reports] values to be overidden in each report section
+  (e.g. [GENERAL], [MONTHLY], [FULLDAILY], etc.)</li>
+<li>Filter and TimeReport summaries are written in 'smallfont' class.</li>
+<li>Added support for elm.class (and elm#id) in HTMLWriter::HTML_3_2.</li>
+<li>Added HTMLWRiter::HTML_3_2 support for span class= or id= .</li>
+<li>Added HTMLWRiter::HTML_3_2 support for background-image.</li>
+<li>Directory report now links [Root Directory] to '/'.</li>
+<li>Added "other" bar to the end of bar charts if too many bars. [ST]</li>
+<li>Moved [statistics]Summary_Rows to [QUICK]Rows and [statistics]General_Rows 
+to [GENERAL]Rows.</li>
+<li>No longer numbers or charts the [not listed] rows.</li>
+<li>Improved handling of date floors a little more with a better 
+  regexp and matches.</li>
+<li>[navigation]File_Out can be keywords 'LEFT', 'RIGHT', 'TOP', 
+  'BOTTOM' or 'NONE'.</li>
+</ul>
+
+
+
+<P>For changes that resulted in versions 1.X see 
+<A HREF="changes1.html">Changes 1.X</A>.</P>
+
+ 
+        
+
+        <div style="text-align: center; border-top: 2px solid black; border-bottom: 2px solid black; margin-top: 4px; margin-bottom: 6px; padding-top: 4px; padding-bottom:6px;">
+            [<a href="index.html">Introduction</a>]&nbsp;[<a href="map.html">Documentation&nbsp;map</a>]&nbsp;[<a href="siteindex.html">Index</a>]&nbsp;[<a href="faq.html">Frequently Asked Questions</a>]&nbsp;[<a href="license.html">License</a>]
+        </div>
+        
+        <span class="fineprint">Send questions or comments to <a href="mailto:dgsupport@wadsack-allen.com">Wadsack-Allen Digital Group Support</a>.<br />
+         <a href="http://reportmagic.org/">Report Magic</a> 2.21 Documentation. Copyright &copy; 1999-2003 <a href="http://wadsack-allen.com/">Wadsack-Allen</a>. All Rights Reserved.</span>
+    </body>
+</html>
+
+
+

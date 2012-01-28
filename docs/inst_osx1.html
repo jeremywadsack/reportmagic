@@ -1,0 +1,279 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1" />
+        <meta name="AUTHOR" content="This page created by Wadsack-Allen Digital Goup" />
+        <title>Report Magic for Analog Documentation - </title>
+<style type="text/css">
+<!--
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+a {
+    text-decoration:normal;
+}
+
+h1 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:24pt; 
+    font-weight:bold;
+}
+
+h2 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:18pt; 
+    font-weight:bold;
+}
+
+h3 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:16pt; 
+    font-weight:bold;
+}
+
+h4 {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:14pt; 
+    font-weight:bold
+}
+
+dl {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ul {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ol {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+.fineprint {
+    font-family:Arial, Helvetica; 
+    font-size:8pt;
+}
+
+.fineprint a {
+    color:#000099;
+    font-weight:bold;
+}
+
+code {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+pre {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+
+.note  { 
+	background-color: #f50000; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px #c50000; 
+}
+
+.term  { 
+	background-color: #f5f5f5; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px silver;
+	font-family: monospace,courier,fixedsys;
+	font-size: 8pt;
+}
+-->
+</style>
+    </head>
+
+    <body bgcolor="#ffffff" text="#000000" link="#000099" vlink="#cc3399" alink="#003399">
+        <table border="0" cellspacing="0" cellpadding="0" summary="Layout table">
+            <tr>
+                <td align="center"><a href="http://www.reportmagic.org/"><img src="images/title.gif" width="288" height="66" alt="Report Magic for Analog" border="0" /></a> </td>
+
+                <td rowspan="2" align="left" valign="top"><img src="images/logo.gif" width="138" height="150" alt="Documentation" /> </td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="top" width="291">
+                    <h1></h1>
+                </td>
+            </tr>
+        </table>
+        
+<h2>Supplemental steps to install Report Magic on Mac OS X v0.1</h2>
+
+<p class="note"><b>Note:</b> This process was documented using Report Magic 2.05 on 
+Mac OS X 10.0.3 Server and was written 
+by <a href="mailto:condor@mac.com?subject=ReportMagic">Jim Powell</a>. OS X server 10.1 
+and 10.2 are configured differently and require different approaches. See 
+<a href="inst_osx.html">Installing Report Magic on Mac OS X Server</a> for more recent
+instructions.</p>
+
+<p><b>Disclaimer</b>:  I am not an expert at this.  This information is mainly based on my
+experience with trying to install Report Magic on my own system so I can't guarantee that
+this is the best way of going about this.  If you have any recommendations on how to
+improve this documentation please send them to 
+<a href="mailto:dgsupport@wadsack-allen.com">Wadsack-Allen Digital Group Support</a>.</p>
+
+<p>I would highly recommend installing the Developer Tools packages if you have not already
+done so.  I don't know of any dependencies however so it isn't required.</p>
+
+<p>This is a command line process so if you have not familiarized yourself in some fashion
+with Terminal, the command line, and at least one text editor like vi, emacs, pico, etc.
+then you should probably do so before hand, but hopefully this guide will invlove minimal
+effort 
+
+<h3>Preparation:</h3>
+<p>Enable root user using NetInfo Manager if you have not done so already.
+Download the latest Report Magic Source Package from 
+<a href="http://www.reportmagic.org/">http://www.reportmagic.org/<a> (or your nearest
+mirror) and follow the online installation documentation and refer to this document 
+for any changes that need to be made for compiling on OS X.</p>
+
+<p>The following components will need to be installed (in this order):</p>
+<p>System Libraries:</p>
+<dl>
+        <dd><a href="http://www.freesoftware.com/pub/infozip/zlib/">zlib</a></dd>
+        <dd><a href="http://download.sourceforge.net/libpng/libpng-1.0.12.tar.gz">libpng</a></dd>
+        <dd><a href="ftp://ftp.uu.net/graphics/jpeg/jpegsrc.v6b.tar.gz">jpeg-6b</a><dd>
+        <dd><a href="http://www.boutell.com/gd/http/gd-1.8.4.tar.gz">libgd</a></dd>
+</dl>
+<p>Perl Modules:</p>
+<dl>
+        <dd><a href="http://www.CPAN.org/authors/id/L/LD/LDS/GD-1.33.tar.gz">GD</a></dd>
+        <dd><a href="http://www.CPAN.org/authors/id/M/MV/MVERB/GDTextUtil-0.80.tar.gz">GD::Text</a></dd>
+        <dd><a href="http://www.CPAN.org/authors/id/M/MV/MVERB/GDGraph-1.33.tar.gz">GD::Graph</a></dd>
+        <dd><a href="http://www.CPAN.org/authors/id/W/WA/WADG/GDGraph3d-0.55.tar.gz">GD::Graph3d</a></dd>
+        <dd><a href="http://www.CPAN.org/authors/id/R/RB/RBOW/Config-IniFiles-2.19.tar.gz">Config::IniFiles</a></dd>
+        <dd><a href="http://www.CPAN.org/authors/id/S/SB/SBURKE/HTML-Tagset-3.03.tar.gz">HTML::Tagset</a></dd>
+        <dd><a href="http://www.CPAN.org/authors/id/G/GA/GAAS/HTML-Parser-3.25.tar.gz">HTML::Parser</a></dd>
+        <dd><a href="http://www.CPAN.org/authors/id/R/RB/RBS/File-Spec-0.82.tar.gz">File::Spec</a></dd>
+</dl>
+
+<h3>Installation specifics:</h3>
+<p>Use <code>tar -xzf &#60;archive name&#62;</code> to decompress the downloaded archives.</p>
+<h2>System Libraries</h2>
+<dl>
+<dt>zlib:</dt>
+<dd>Despite zlib being included in Mac OS X, it does not include the library files so you
+will need to download and install zlib.  I used the original zlib-1.1.3 source instead of
+the Darwin port that is listed, but you should technically be able to use either.</dd>
+
+<dt>libpng:</dt>
+<dd>Untar libpng-1.0.12.tar.gz in the same directory you untared your zlib source and then
+rename the directories using the following:</dd>
+<pre>
+        mv zlib-1.1.3 zlib
+        mv libpng-1.0.12 libpng
+</pre>
+<dd>Move or delete the .tar.gz archives before installing. <code>cd</code> to 
+libpng. Copy the appropriate makefile:</dd>
+<pre>
+        cp ./scripts/makefile.macosx ./Makefile
+</pre>
+
+<dt>jpeg-6b:</dt>
+<dd>After running <code>./configure</code> edit the resulting Makefile so that 
+<code>LIBTOOL = /usr/bin/glibtool</code></dd>
+
+<dt>libgd:</dt>
+<dd>This one involves a little editing of the default Makefile so it can find 
+the correct libraries and include files. My settings were as follows:</dd>
+<pre>
+CFLAGS=-O -DHAVE_LIBPNG -DHAVE_LIBJPEG
+LIBS=-lgd -lpng -lz  -lm (I have not gotten the inclusion of -ljpeg to work at the time I write this)
+INCLUDEDIRS=-I. -I/usr/local/include -I/usr/local/lib -I/Users/Shared/jpeg -I/Users/Shared/zlib -I/Users/Shared/libpng 
+LIBDIRS=-L. -L/usr/local/lib -L/usr/local/bin -L/Users/Shared/jpeg -L/Users/Shared/zlib -L/Users/Shared/libpng
+<pre>
+
+<dd>(/Users/Shared/ is where I had left the untared source directories, replace it with the
+path to the directory you have those directories in)</dd>
+
+<dd>Should you have compile errors make sure your LIBDIRS and INCLUDEDIRS settings point to
+where the .a and .h files are actually located, respectively.  You can also play 
+with the order of the LIBS to be compiled, but I didn't have much luck with that.</dd>
+</dl>
+
+<p>This should complete the system library requirements needed to install and run the
+necessary Perl modules.  At the time of this writing I could not get the autoloading
+feature of the <code>rmagic/Install.PL</code> script to download the necessary modules 
+[this appears to be an issue in the Mac OS X ftp implementation] so I installed the 
+modules manually.  Below I have made note of any necessary changes.</p>
+
+<p>For the most part I did as little as possible so I could get things up and running, but
+you may wish to make changes to the resulting Makefiles for each module after running
+Makefile.PL to change where the module is installed, etc.</p>
+
+<h2>Perl Modules</h2>
+
+<p><b>GD:: modules:</b>Before compiling you need to update you ranlib database as root with:
+<code>ranlib /usr/local/lib/*.a</code> [assuming this is where you installed the 
+library files, which is the default]</p>
+
+<p>Now you can continue by issuing <code>perl Makefile.PL</code>, <code>make</code>, 
+<code>make test</code>, and <code>make install</code></p>
+
+<p>Assuming that you were able to compile libgd successfully you should not encounter any
+major problems compiling the <b>GD</b>, <b>GD::Text</b>, <b>GD::Graph</b>, or <b>GD::Graph3d</b> modules.  You should
+expect some of the subtests for each module to fail but it's nothing to worry about as
+long as the majority succeed.</p>
+
+<p><b>HTML::TagSet</b> should be installed before <b>HTML::Parser</b>.  HTML::Parser includes the
+HTML::Entities module that Report Magic uses.</p>
+
+<p>Once you've installed all the modules go back to where you left the Report Magic Source
+Package archive and untar it if you haven't already done so. <code>cd</code> into the 
+resulting directory. If you have a specific directory (e.g. <code>/Library/WebServer/Documents/</code>, 
+so you can access the resulting reports via a browser [note there may be some security 
+issue with putting Report Magic in your webserver documents directory]) that you want 
+the Report Magic directory to be installed to, then edit the <code>$DEST</code> variable of the 
+<code>Install.PL</code> script.</p>
+
+<p>If you don't install into <code>/Library/WebServer/Documents/</code> then you will need to change the
+output destination of Report Magic in the <code>rmagic.ini</code> file so that it will generate the
+reports into a directory that is accessible from your webservers root directory.
+Issue the <code>perl Install.PL -no_modules</code> command</p>
+
+<p>Go to the directory that was just installed called "rmagic" and in there you will find
+the <code>rmagic.sample</code> and <code>sample.dat</code> files.  The <code>rmagic.sample</code> 
+is an example settings file, so just run the <code>rmagic.pl</code> application to 
+test your installation and make sure everything works. You should end up with a 
+"reports" directory below your installation directory containing all the reports.</p>
+
+<p>If everything goes as planned you should now be the proud administrator of a much more
+flexible report formatter. To start customizing Report Magic for your own server see the 
+<a href="overview.html">Quick Start</a> page</p>
+
+ 
+        
+
+        <div style="text-align: center; border-top: 2px solid black; border-bottom: 2px solid black; margin-top: 4px; margin-bottom: 6px; padding-top: 4px; padding-bottom:6px;">
+            [<a href="index.html">Introduction</a>]&nbsp;[<a href="map.html">Documentation&nbsp;map</a>]&nbsp;[<a href="siteindex.html">Index</a>]&nbsp;[<a href="faq.html">Frequently Asked Questions</a>]&nbsp;[<a href="license.html">License</a>]
+        </div>
+        
+        <span class="fineprint">Send questions or comments to <a href="mailto:dgsupport@wadsack-allen.com">Wadsack-Allen Digital Group Support</a>.<br />
+         <a href="http://reportmagic.org/">Report Magic</a> 2.21 Documentation. Copyright &copy; 1999-2003 <a href="http://wadsack-allen.com/">Wadsack-Allen</a>. All Rights Reserved.</span>
+    </body>
+</html>
+
+
+
+

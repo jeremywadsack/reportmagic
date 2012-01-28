@@ -1,0 +1,451 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1" />
+        <meta name="AUTHOR" content="This page created by Wadsack-Allen Digital Goup" />
+        <title>Report Magic for Analog Documentation - </title>
+<style type="text/css">
+<!--
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+a {
+    text-decoration:normal;
+}
+
+h1 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:24pt; 
+    font-weight:bold;
+}
+
+h2 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:18pt; 
+    font-weight:bold;
+}
+
+h3 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:16pt; 
+    font-weight:bold;
+}
+
+h4 {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:14pt; 
+    font-weight:bold
+}
+
+dl {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ul {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ol {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+.fineprint {
+    font-family:Arial, Helvetica; 
+    font-size:8pt;
+}
+
+.fineprint a {
+    color:#000099;
+    font-weight:bold;
+}
+
+code {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+pre {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+
+.note  { 
+	background-color: #f50000; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px #c50000; 
+}
+
+.term  { 
+	background-color: #f5f5f5; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px silver;
+	font-family: monospace,courier,fixedsys;
+	font-size: 8pt;
+}
+-->
+</style>
+    </head>
+
+    <body bgcolor="#ffffff" text="#000000" link="#000099" vlink="#cc3399" alink="#003399">
+        <table border="0" cellspacing="0" cellpadding="0" summary="Layout table">
+            <tr>
+                <td align="center"><a href="http://www.reportmagic.org/"><img src="images/title.gif" width="288" height="66" alt="Report Magic for Analog" border="0" /></a> </td>
+
+                <td rowspan="2" align="left" valign="top"><img src="images/logo.gif" width="138" height="150" alt="Documentation" /> </td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="top" width="291">
+                    <h1></h1>
+                </td>
+            </tr>
+        </table>
+        
+
+<P>For changes that resulted in the current version see 
+<A HREF="whatsnew.html">What's New</A>.</P>
+
+<H2>Version 1.42 Service Release</H2>
+<ul>
+<li>Fixed a performance bug in bar chart generation</li>
+<li>Fixed several minor rendering problems to improve graphs</li>
+<li>Fixed several issues in GDGraph3d module. Source package users will need 
+   to get version 0.41 (installed by Install.PL script)</li>
+</ul>
+
+<H2>Version 1.41 Service Release</H2>
+<UL>
+<LI>Fixed version in install directory on Source Package</LI>
+<LI>A new version (0.40) of GDGraph3d is available to fix compatability 
+issues with GD::Graph 1.30.</LI>
+<LI>Fixed a font face bug in report footers.</LI>
+<LI>Removed extraneous 'rmagic:' prefixes in reports.</LI>
+<LI>Fixed bug in "General_Rows=ALL" implementation.</LI>
+<LI>Fixed 'divide by zero' bug in large data sets on line graphs.</LI>
+<LI>Fixed a date formatting bug where leading zeroes showed where they shouldn't.</LI>
+</UL>
+
+
+<H2>Version 1.4 General Release</H2>
+<ul>
+<li>Hierarchical reports and support for Analog 4.1</li>
+<li>Support for line numbering defined by Analog.</li>
+<li>Only top level items are numbered in hierarchical reports.</li>
+<li>Only numbered items are graphed or sumarized.</li>
+<li>Unknown columns are ignored, not the entire report containing them.</li>
+<li>Output messages prepended with 'rmagic: '.</li>
+<li>Install.PL script (for Source Package) does error checking when copying.</li>
+<li>Host URL linked in the General Summary.</li>
+<li>Units added to Total Data Transferred in the General Summary.</li>
+<li>In the Source Package, the Install.PL script no longer automatically upgrades 
+    the Perl modules GD, File::Spec or HTML::Parser.</li>
+<LI>Fixed ALL in Quick Summary to include all reports.</LI>
+<LI>Fixed bug that improperly formatted IP numbers in reports.</LI>
+<LI>On Unix-like systems, Report Magic will now work as a symbolic link.</LI>
+<LI>Changed all references to Analog website to analog.cx.</LI>
+<LI>Fixed bug whereby Verbose setting only worked from command-line</LI>
+<LI>Fixed input handling for pipe support. In order to pipe from Analog, 
+you must use a syntax like 'analog | perl rmagic.pl' ('perl' is NOT optional).</LI>
+<LI>Fixed bugs in parsing and output of sort orders.</LI>
+<LI>Fixed bug in Install.PL that mis-typed GDGraph3D.</LI>
+<LI>Changed 'perl -V' in docs/isnt_src.html to 'perl -v'.</LI>
+<LI>Updated sample settings files to 1.4 syntax.</LI>
+<LI>Changed referenced to X11 colors in docs to HTML color names.</LI>
+<LI>Fixed various grammatical problems in English and Italian files.</LI>
+</ul>
+
+
+<H2>Version 1.31 Service Release</H2>
+<UL>
+<LI>Fixed y-values bug in GDGraph3D</LI>
+<LI>Fixed mis-matched links (windows and mac install) on docs/map.html</LI>
+<LI>Fixed missing target for Report Magic and Analog links on reports</LI>
+<LI>Updated install script to cover reduce possible error messages</LI>
+<LI>Added -only_modules option to install script.</LI>
+<LI>Fixes divide by zero bug in quick summary.</LI>
+<LI>Updated documentation on source package installation.</LI>
+<LI>Improved date insertions to allow for multiple insertions.</LI>
+<LI>Documented the point size option on Graph_Font setting.</LI>
+<LI>Fixed a bug in graph colors where background and foreground were the same.</LI>
+<LI>Fixed a bug in error logging. All errors now go to the error logfile.</LI>
+</UL>
+
+<H2>Version 1.3 General Release</H2>
+<UL>
+<LI>Quick Summary sort changed to sort in the order given in the settings file.</LI>
+<LI>TrueType fonts now supported in the graphs using a setting 
+<CODE>Graph_Font</CODE> in the <CODE>[report]</CODE> section 
+of the settings files.</LI>
+<LI>Improved install procedure on source package.</LI>
+<LI>Error logs are now appended rather than overwritten.</LI>
+<LI>Date insertions supported in configuration settings
+<CODE>[statistics]</CODE> <CODE>Log_File</CODE>, <CODE>[statistics]</CODE> 
+<CODE>Include</CODE>, <CODE>[statistics]</CODE> <CODE>File_In</CODE> and 
+<CODE>[website]</CODE><CODE>Title</CODE>.</LI>
+<LI>Output CharacterSet support (Mainly for translators, especially Japanese).</LI>
+<LI>Fixed portability bug in settings file locater.[JL]</LI>
+<LI>Fixed bug whereby ascii escape sequences where showing up in graphs.</LI>
+<LI>Fixed case sensitivity bug in settings file name.</LI>
+<LI>Fixed bug where bullets weren't being added in the navigation.</LI>
+<LI>Fixed 'MostAktive' bug in lang/de/rdata.ini.</LI>
+<LI>German language files shortDays needs to change to 2 letters for 4.0.[MV]</LI>
+<LI>Fixed bug in Quick Summary date formatting.</LI>
+<LI>Fixed bug in Mac Always_Quit option.</LI>
+<LI>Changed decoding of HTML entities into Latin-1 for ttf.</LI>
+</UL>
+
+<H2>Version 1.2 General Release</H2>
+<UL>
+<LI>Updated reports and columns for compatability with Analog 4.0.</LI>
+<LI>New non-frames mode allows navigation menu to be included in report 
+page.</LI>
+<LI><CODE>[statistics]</CODE> <CODE>Frame_File_Out</CODE> will default to 
+'index.html', assuming a frameset is being built.</LI>
+<LI>If <CODE>[reports]</CODE> <CODE>File_Out</CODE> is a directory, then 
+Report Magic will build each report in its own file in this directory. If it 
+is a filename then Report Magic will put all the reports in this one file.</LI>
+<LI><CODE>[statistics]</CODE> <CODE>One_File</CODE> is deprecated.</LI>
+<LI>Input from STDIN by using the special filename '-' in the 
+setting <CODE>[statistics]</CODE> <CODE>File_In</CODE>.</LI>
+<LI>Output to STDOUT by setting <CODE>[reports]</CODE> <CODE>File_Out</CODE> 
+to the filename '-'.</LI>
+<LI>New keywords, ALL and NONE for <CODE>[statistics]</CODE> 
+<CODE>General_Summary</CODE> and <CODE>Summary_Rows</CODE>.</LI>
+<LI>New optional settings file format, '.conf', replaces the old '.cfg' 
+file format. The standard and popular '.ini' file format still works.</P>
+<LI>Report magic will autodetect the format of your settings file regardless 
+of the filename.</LI>
+<LI>Deprecated <CODE>PNG_Graphs</CODE> option from <CODE>[statistics]</CODE> 
+section of settings files. This is autodetermined by Report Magic based on 
+the capability of the installed library (or binary distribution).</LI>
+<LI>Deprecated <CODE>One_File</CODE> option from <CODE>[statistics]</CODE> 
+section of the settings files. Report Magic determines this based on the 
+setting <CODE>Out_File</CODE> in the <CODE>[reports]</CODE> section.</LI>
+<LI>Fixed a bug where settings filenames with a '-' were not read from the 
+command line.</LI>
+<LI>Many variable initialization warnings were fixed, providing better 
+performance.(MV) Some still to go.</LI>
+<LI>Improved startup messages and performance in some situations.</LI>
+<LI>Fixed a bug whereby the 'default' language for a site would override 
+any language settings.</LI>
+<LI>Fixed a minor bug in ini-style settings file interpretation.</LI>
+<LI>Fixed a bug whereby days of the week, in Japanese, were formatted as 
+numbers.</LI>
+</UL>
+
+
+<H2>Version 1.11 Service Release</H2>
+<UL>
+<LI>Windows Binary package creates PNG format graph files.</LI>
+<LI>Fixed Report Magic version, added OS.</LI>
+<LI>Added Analog version to bottom of reports when available.</LI>
+<LI>Clarified character set usage in graphs and decomosed non-latin-2 
+characters so that graphs are more accurately spelled in non-english.</LI>
+<LI>Fixed a bug in the report maxima when Active_Column was not set.</LI>
+<LI>Improved source so that it is 'strict'.</LI>
+</UL>
+
+<H2>Version 1.1 General Release</H2>
+<UL>
+<LI>New setting is called <CODE>Log_File</CODE> and is under the 
+<CODE>[statistics]</CODE> tells Report Magic to write all error or 
+notification messages to a file instead of the display.</LI>
+<LI>On Mac platform, only, new setting <CODE>Always_Quit</CODE> in the 
+<CODE>[statistics]</CODE> section tells Report Magic to quit the program 
+whenever any error occurs. (Normally it leaves the "console" window up so 
+you can see any messages.) If you are using the logging option (above) it 
+will also quit the program on errors. This option has no effect on non-Mac 
+platforms.</LI>
+<LI>New setting <CODE>No_Robots</CODE> in the <CODE>[statistics]</CODE> 
+section tells Report Magic to add a NO_ROBOTS Meta tag to each output file. 
+This tells robots who are spidering your site (and obey these robot 
+exclusion rules extensions) not to index these pages.</LI>
+<LI>New setting <CODE>Company_Logo</CODE> in the <CODE>[statistics]</CODE> 
+section allows you to include your company logo or other statements in each 
+report file. Using this option will hide the normal logos replacing them 
+with the contents of the filename you provide.</LI>
+<LI>If you install the new libgd / GD.pm, GIF files are no longer possible. 
+Instead the superior PNG format is being used (this is due to patent issues 
+with Unisys and the GIF file format). If you are upgrading from an older 
+version and already have an older version of libgd then your will still 
+get GIF images.</LI>
+<LI>You can tell Report Magic reports to find images (currently just the 
+logos) in a single place on the web, rather than in the local directory. The 
+new setting <CODE>Image_Dir</CODE> under the <CODE>[reports]</CODE> section 
+gives the location (directory) of the images in URL syntax. This can be a 
+relative (e.g. '../images') or absolute (e.g. 
+'http://www.hostserver.com/images/stats/') URL location.</LI>
+<LI>New setting <CODE>Language</CODE> to the <CODE>[statistics]</CODE> 
+section can be set to the language for that report. Report Magic looks in the 
+<CODE>lang</CODE> directory under the directory it was installed in for a 
+directory containing each language's set of files.</LI>
+<LI>New setting <CODE>Verbose</CODE> under <CODE>[statistics]</CODE> allows 
+you to control what kind of messages Report Magic tells when running. The 
+valid values are N for Notices, W for Warnings and E for errors. The default 
+is to output all. To tell Report Magic to be absolutely quiet use the keyword 
+NONE.</LI>
+<LI>You can include the contents of another setting file with the 
+setting <CODE>Include</CODE> in the <CODE>[statistics]</CODE> section. This 
+takes the name of a settings file whose values will be included.</LI>
+<LI>Command-line options have been added that can override settings 
+file settings. All the options use the same name as the settings file option 
+with a '-' preprended. That is, the name of the section (in the .ini file 
+format) follwed by and underscore ('_') followed by the parameter name.</LI>
+<LI>New feature that you can use in output filenames in your 
+settings file  to have them include a date. All output filenames (report, 
+index, navigation page, output directory and error logging file) can now 
+contain a code like <CODE>%yymmdd%</CODE> where the current date should be 
+inserted. Everything between the '%' symbols is used as a date format 
+specifier. See <A HREF="datefmts.html">the Date Format Reference</A> for 
+details on the format string.</LI>
+<LI>Output files can also use the key code <CODE>%infile%</CODE> to 
+inserting the name of the input filename in the output file's name. Note 
+that <CODE>%infile%</CODE> is the input file name without the extension.</P>
+<LI>Graphs now use a new 3D style. This means bar charts and line charts 
+are now extruded into a third dimmension. Pie charts, which were already 3D, 
+have been fixed to include the labels when they are short enough.</LI>
+<LI>Fixed a bug that caused Report Magic to not be able to interpret input 
+files with a hostname that contained the character sequence 'IP'.</LI>
+<LI>All fonts and colors are now handled as optional. If a font or color is 
+not specified in the settings file, then no tag will be written. This should 
+help to keep the file size down.</LI>
+<LI>The color used for graph text, label and line colors was changed to 
+match text color for reports (<CODE>reports_Text_Color</CODE>). The support 
+is minimal (because of limitations in the GIFgraph module) but should help, 
+especially when using a black background. You can use any text color that 
+happens to be predefined by GIFgraph. This includes 'black' and 'white' as 
+well as the following hex-code colors: </LI>
+<LI>The setting <CODE>Title</CODE> was moved from the <CODE>[reports]</CODE> 
+section to the <CODE>[website]</CODE> section. Exisiting settings files 
+don't need to be changed -- Report Magic will read it either way. This 
+just seems like a more logical place for it.</LI>
+<LI>The <CODE>ColSpan</CODE> option in <CODE>rdata.ini</CODE> has been deprecated.
+Report Magic now knows inherently how to span columns based on the type 
+if report.</LI>
+<LI>Internationalization was improved by spliting up Command-Output and 
+HTML-Output items in language files. This was accomplished by changing the 
+text in items <CODE>N0001</CODE>, <CODE>N0003</CODE> and <CODE>E0010</CODE> 
+in <CODE>lang.ini</CODE>.</LI>
+<LI>Improved internationalization by implementing a %0, %1, %2, ... 
+replacement formatting instead of the %s that was used in <CODE>lang.ini</CODE>.</LI>
+<LI>With GD.pm 1.19 module from CPAN, there are new fonts for graphs to 
+support Latin-1, Latin-2 and other character sets including 16-bit characters.</LI>
+<LI>Item <CODE>S0009</CODE> under <CODE>[Text]</CODE> in 
+<CODE>lang.ini</CODE> has been deprecated in favor of a more 
+internationlaized solution: There is now a new item in <CODE>rdata.ini</CODE> 
+for each report. '<CODE>MostActive</CODE>' provides the description used for 
+the report by the Quick Summary. This way each report can be handled 
+properly with respect to gender and case.</LI>
+</UL>
+
+
+<H2>Version 1.0 General Release</H2>
+<UL>
+<LI>Changed the date format specification used in the <CODE>rdata.ini</CODE>, <CODE>cdata.ini</CODE> 
+and <CODE>lang.ini</CODE> files to use the symbol 'n' for minutes. This 
+allows any character to separate times (as in italian 'h,nn').</LI>
+<LI>Fixed a bug that cropped up in command-line specified settings files</LI>
+<LI>Fixed a bug that broke the date ouput on the general summary</LI>
+<LI>Added percent symbols to all language files</LI>
+<LI>Modified bar graph number formats to have no decimal values for 
+	internationalization</LI>
+<LI>Orgazined chart colors to be easily distiguishable by color-blind viewers</LI>
+<LI>Unescaped any HTML Entities before writing graph text</LI>
+<LI>Modified "Other" pie slice to only exists if it includes more than one 
+	slice</LI>
+<LI>Fixed a bug in the FLOOR descriptions</LI>
+</UL>
+
+<H2>Version 1.0 BETA 3</H2>
+<UL>
+<LI>Portability was achieved across all major Perl platforms</LI>
+<LI>Five separate languages are now available</LI>
+<LI>Pie and Bar charts in the same report use consistent coloring</LI>
+<LI>Fixed a truncation problem for IP addresses</LI>
+<LI>Fixed the Weekend summary names in Daily Summary to be locale compatible</LI>
+<LI>Fixed a potential infinite loop problem in the getDateString member</LI>
+<LI>Fixed a bug which improperly handled rows with no data value name</LI>
+<LI>Made capitalization consitent between chart type filenames and links</LI>
+<LI>Report Magic now properly handles data rows with no data name</LI>
+<LI>Report Magic now check for the existence of settings files before 
+	trying to open them</LI>
+<LI>Items like "[not listed: XXX]" will no longer appear in Quick Summary. 
+	NOTE that the fix to this now makes it impossible to summarize any 
+	items that have been OUTPUTALIASed to look like the above.</LI>
+<LI>Fixed a bug where the last digit of number was lost if ListSeparator 
+	was blank or nonexistant</LI>
+<LI>Removed the subtitle on bargraphs because it was not internationalized 
+	and provided no more useful information.</LI>
+<LI>The start and end times for the report period are now formatted exactly 
+	like the report generation time. (O0008 under [Text] in lang.ini)</LI>
+<LI>Swapped order of weekend and weekday summaries.</LI>
+<LI>Changed the text of "Peak Time" to "Peak Entry".</LI>
+<LI>Modified encoding of data values to support HTML-encoded data</LI>
+<LI>Fixed a bug whereby non-English languages didn't properly total 
+	Weekends in the Daily Summary. (Why did the English one work?)</LI>
+</UL>
+
+
+
+<H3>Version 1.0 BETA 2</H3>
+<UL>
+<LI>Multilingual support in <CODE>lang</CODE> directory</LI>
+<LI>New <CODE>statistics_Meta_Refresh</CODE> added to expire pages</LI>
+<LI>Supports FLOOR and SORTBY data and column changes</LI>
+<LI>Properly handles all fields of a D type column.</LI>
+<LI>Properly handles date-type fields in General Summary.</LI>
+<LI>Added support for 'f' floors and sort column in Analog 3.3 
+	(Support for date floors though is very minimal.)</LI>
+<LI>Report Magic now ignores lines containing unknown column specs.</LI>
+<LI>Report Magic now only produces one error notice per line with an 
+	unknown row spec (or column spec).</LI>
+<LI>A placeholder is inserted if no graph can be created.</LI>
+<LI>All files now have Unix line endings. This works on both platforms.</LI>
+<LI>Added initial '/' in #!/bin/perl in perl source (Sorry!).</LI>
+<LI>Table summaries no longer contain HTML tags.</LI>
+<LI>Program does not assume both count and percent data.</LI>
+</UL>
+
+
+<H3>Version 1.0 BETA 1</H3>
+<UL>
+<LI>Configuration file format was changed to make it more readable.</LI>
+<LI>Pie charts use only indices because of a rendering bug in the module.</LI>
+<LI>Configuration option <CODE>statistics_Reverse_Time</CODE> added to 
+flip chart data in Time Reports.</LI>
+</UL>
+
+<P>For changes that resulted in pre-1.x versions see 
+<A HREF="changes0.html">Changes 0.X</A>.</P>
+
+ 
+        
+
+        <div style="text-align: center; border-top: 2px solid black; border-bottom: 2px solid black; margin-top: 4px; margin-bottom: 6px; padding-top: 4px; padding-bottom:6px;">
+            [<a href="index.html">Introduction</a>]&nbsp;[<a href="map.html">Documentation&nbsp;map</a>]&nbsp;[<a href="siteindex.html">Index</a>]&nbsp;[<a href="faq.html">Frequently Asked Questions</a>]&nbsp;[<a href="license.html">License</a>]
+        </div>
+        
+        <span class="fineprint">Send questions or comments to <a href="mailto:dgsupport@wadsack-allen.com">Wadsack-Allen Digital Group Support</a>.<br />
+         <a href="http://reportmagic.org/">Report Magic</a> 2.21 Documentation. Copyright &copy; 1999-2003 <a href="http://wadsack-allen.com/">Wadsack-Allen</a>. All Rights Reserved.</span>
+    </body>
+</html>
+
+
+

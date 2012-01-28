@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+  <title>Report Magic Form Access</title>
+  <style type="text/css">
+    /*<![CDATA[*/
+    body {font-family: Verdana,Helvetica,sans-serif;}
+    p {font-family: Verdana,Helvetica,sans-serif;}
+    form {font-family: Verdana,Helvetica,sans-serif;}
+    hr {background-color: #3333ff; border: 1px solid #333399;}
+    /*]]>*/
+  </style>
+</head>
+<body>
+
+  <h1>Report Magic Form Access</h1>
+<!--
+     ##################################################################
+     
+     In order to use this form, you will need to change the the <form...>
+     line below to point to the location where you have installed your
+     Report Magic applicaiton.
+     
+     See the file docs/cgi.html in the distribution for instructions on 
+     how to configure Report Magic for CGI use.
+     
+     ##################################################################
+-->
+  <form action="/cgi-bin/rmagic.pl" method="post">
+
+    <hr />
+      <h2>Select which reports to show</h2>
+      
+      <input type="radio" name="GENERAL" value="on" checked="checked" />[On]
+      <input type="radio" name="GENERAL" value="OFF" />[Off] General Summary<br />
+      
+      <input type="radio" name="MONTHLY" value="ON" checked="checked" />[On]
+      <input type="radio" name="MONTHLY" value="OFF" />[Off] Monthly Report<br />
+      
+      <input type="radio" name="WEEKLY" value="ON" />[On] 
+      <input type="radio" name="WEEKLY" value="OFF" checked="checked" />[Off] Weekly Report<br />
+      
+      <input type="radio" name="DAILYSUM" value="ON" checked="checked" />[On]
+      <input type="radio" name="DAILYSUM" value="OFF" />[Off] Daily Summary<br />
+      
+      <input type="radio" name="DAILYREP" value="ON" />[On] 
+      <input type="radio" name="DAILYREP" value="OFF" checked="checked" />[Off] Daily Report<br />
+      
+      <input type="radio" name="HOURLYSUM" value="ON" checked="checked" />[On]
+      <input type="radio" name="HOURLYSUM" value="OFF" />[Off] Hourly Summary<br />
+      
+      <input type="radio" name="DOMAIN" value="ON" checked="checked" />[On]
+      <input type="radio" name="DOMAIN" value="OFF" />[Off] Domain Report<br />
+      
+      <input type="radio" name="ORGANISATION" value="ON" checked="checked" />[On] 
+      <input type="radio" name="ORGANISATION" value="OFF" />[Off] Organisation Report<br />
+      
+      <input type="radio" name="DIRECTORY" value="ON" checked="checked" />[On]
+      <input type="radio" name="DIRECTORY" value="OFF" />[Off] Directory Report<br />
+      
+      <input type="radio" name="FILETYPE" value="ON" />[On] 
+      <input type="radio" name="FILETYPE" value="OFF" checked="checked" />[Off] File Type Report<br />
+      
+      <input type="radio" name="REQUEST" value="ON" checked="checked" />[On]
+      <input type="radio" name="REQUEST" value="OFF" />[Off] Request Report<br />
+      
+      <input type="radio" name="SIZE" value="ON" />[On] 
+      <input type="radio" name="SIZE" value="OFF" checked="checked" />[Off] File Size Report<br />
+      
+      <input type="radio" name="REFERRER" value="ON" />[On] 
+      <input type="radio" name="REFERRER" value="OFF" checked="checked" />[Off] Referrer Report<br />
+      
+      <input type="radio" name="SEARCHQUERY" value="ON" />[On]
+      <input type="radio" name="SEARCHQUERY" value="OFF" checked="checked" />[Off] Search Query Report<br />
+      
+      <input type="radio" name="SEARCHWORD" value="ON" />[On]
+      <input type="radio" name="SEARCHWORD" value="OFF" checked="checked" />[Off] Search Word Report<br />
+      
+      <input type="radio" name="BROWSERSUM" value="ON" />[On]
+      <input type="radio" name="BROWSERSUM" value="OFF" checked="checked" />[Off] Browser Summary<br />
+      
+      <input type="radio" name="OSREP" value="ON" />[On] 
+      <input type="radio" name="OSREP" value="OFF" checked="checked" />[Off] Operating System Report<br />
+      
+      <input type="radio" name="STATUS" value="ON" />[On] 
+      <input type="radio" name="STATUS" value="OFF" checked="checked" />[Off] Status Code Report
+      
+      <h2>Select colors for the reports</h2>
+      
+      <p>Background of report pages:
+      <select name="reports_BG_Color">
+        <option value="#ffffcc">Light Yellow</option>
+        <option value="#ccccff">Light Blue</option>
+        <option value="#ffccff">Lavender</option>
+        <option value="#ccffcc">Light Green</option>
+      </select>
+      </p>
+      
+      <p>Color of report title text:
+      <select name="reports_Title_Font_Color">
+        <option value="#ffffff">White</option>
+        <option value="#ffff00">Yellow</option>
+        <option value="#ffcc00">Orange</option>
+        <option value="#ccccff">Light Blue</option>
+      </select>
+      </p>
+      
+      <p>Background of report title text:
+      <select name="reports_Title_BG_Color">
+        <option value="#000000">Black</option>
+        <option value="#000066">Dark Blue</option>
+        <option value="#660066">Deep Purple</option>
+        <option value="#666600">Maroon</option>
+      </select>
+      </p>
+      
+      
+      <h2>Select the language for the reports</h2>
+
+      <p>Language:
+      <select name="statistics_Language">
+        <option value="en">English</option>
+        <option value="ca">Catalan</option>
+        <option value="de">German</option>
+        <option value="es">Spanish</option>
+        <option value="fi">Finnish</option>
+        <option value="fr">French</option>
+        <option value="hu">Hungarian</option>
+        <option value="it">Italian</option>
+        <option value="ja">Japanese</option>
+        <option value="no">Norwegian</option>
+        <option value="pl">Polish</option>
+        <option value="pt">Portuguese</option>
+        <option value="pt-BR">Brazilian Portuguese</option>
+        <option value="ru">Russian</option>
+        <option value="sv">Swedish</option>
+        <option value="zh">Traditional Chinese</option>
+      </select>
+      </p>
+      
+      <input type="submit" value="Produce report" /><br />
+      <hr />
+      
+  </form>
+</body>
+</html>

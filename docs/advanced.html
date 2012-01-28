@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1" />
+        <meta name="AUTHOR" content="This page created by Wadsack-Allen Digital Goup" />
+        <title>Report Magic for Analog Documentation - Advanced Settings</title>
+<style type="text/css">
+<!--
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+a {
+    text-decoration:normal;
+}
+
+h1 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:24pt; 
+    font-weight:bold;
+}
+
+h2 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:18pt; 
+    font-weight:bold;
+}
+
+h3 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:16pt; 
+    font-weight:bold;
+}
+
+h4 {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:14pt; 
+    font-weight:bold
+}
+
+dl {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ul {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ol {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+.fineprint {
+    font-family:Arial, Helvetica; 
+    font-size:8pt;
+}
+
+.fineprint a {
+    color:#000099;
+    font-weight:bold;
+}
+
+code {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+pre {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+
+.note  { 
+	background-color: #f50000; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px #c50000; 
+}
+
+.term  { 
+	background-color: #f5f5f5; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px silver;
+	font-family: monospace,courier,fixedsys;
+	font-size: 8pt;
+}
+-->
+</style>
+    </head>
+
+    <body bgcolor="#ffffff" text="#000000" link="#000099" vlink="#cc3399" alink="#003399">
+        <table border="0" cellspacing="0" cellpadding="0" summary="Layout table">
+            <tr>
+                <td align="center"><a href="http://www.reportmagic.org/"><img src="images/title.gif" width="288" height="66" alt="Report Magic for Analog" border="0" /></a> </td>
+
+                <td rowspan="2" align="left" valign="top"><img src="images/logo.gif" width="138" height="150" alt="Documentation" /> </td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="top" width="291">
+                    <h1>Advanced Settings</h1>
+                </td>
+            </tr>
+        </table>
+        
+
+<p>Report Magic can get quite complicated and has many advanced options for 
+users who want to learn. Below is a brief introduction to each option and 
+some resources where you can find more information.</p>
+
+
+<h3>Setting the Work Hours for the Hourly Summary</h3>
+<p>You can change the hours used to compute and display 'Work Hours' and 
+'After Hours' in the Hourly Summary by setting the <code>Summary1</code> and 
+<code>Summary2</code> settings for the <code>[HOURLY]</code> report. The 
+default configuration uses something like this (localized for your langauge):</p>
+
+<pre>
+[HOURLY]
+Summary1 = [8-16],Work Hours (8:00am-4:59pm)
+Summary2 = [0-7,17-23],After Hours (5:00pm-7:59am)
+</pre>
+
+<p>In the above, the numbers in brackets are the hours to cover for each Summary 
+(these are comma-separated lists of numbers or ranges of numbers). The text after 
+the "<code>],</code>" is displayed on the reports. So, for example, to start the 
+workday at 10:00am and end at 7:00pm you would put something like this into your 
+settings file:</p>
+
+<pre>
+[HOURLY]
+Summary1 = [10-18],Work Hours (10:00am-6:59pm)
+Summary2 = [0-9,19-23],After Hours (7:00pm-9:59am)
+</pre>
+
+<p>Notice that the hours are inclusive, so the Work Hours, 10-18, includes
+every thing from the beginning of the hour 10 (10:00:00) to the end of the 
+hour 18 (18:59:59 or 6:59:59pm).</p>
+
+<h3>Changing links in reports</h3>
+<p>To change hyperlinks in reports, you can set the <code>IncludeLinks</code>
+setting for each individual report in your settings file. <code>IncludeLinks</code>,
+takes a comma-separated list of patterns that, when matched will be linked. For
+example, to link only pages in the request report you would use something like</p>
+<pre>
+    [REQUEST]
+    IncludeLinks=*/,*.htm,*.html,*.asp,*.php
+</pre>
+<p>Of course, this does depend on your definition of what a page is.</p>
+
+<h3>Insertion codes</h3>
+<p>Several settings for Report Magic can accept <i>insertion codes</i>: codes
+that tell Report Magic to insert specific text in the ouput. All filenames 
+can accept insertion codes (such as <code>[statistics]File_In</code> or 
+<code>[reports]File_Out</code>) as well as the <code>[website]Title</code> 
+setting and the content that Analog puts into reports from its <code>HEADER</code> 
+and <code>FOOTER</code> commands.<p>
+<p>Insertion codes take two forms <code>%date format%</code> and 
+<code>${something}</code>. The date format is applied to the current date for 
+<code>[statistics]File_In</code> and <code>[statistics]Log_File</code> and to 
+end date of the report for the all other settings. (This allows you to run reports 
+for the end of the previous month on the first of each month and have filenames 
+and titles reflect the proper period.) Date formats follow the formatting syntax 
+as described in the <a href="datefmts.html">Date Format References</a>.</p>
+<p>The rest of the insertion codes insert values from the current run of Report 
+Magic. The complete list of these codes is as follows:</p>
+<pre>
+     ${infile}          This is the name of the input file (from [statistics]File_In)
+     ${XX}              Where XX is any row in the General Summary (listed <a href="columns.html#general">here</a>)
+     ${GenerationTime}  This is the General Summary PS row, formatted for your locale
+     ${DataStart}       This is the General Summary FR row, formatted for your locale
+     ${DataEnd}         This is the General Summary LR row, formatted for your locale
+     ${AnalogVersion}	This a synonym for the General Summary VE row
+</pre>
+
+<h3>Stylesheet format</h3>
+<p>Using the <code>Stylesheet</code> setting in the <code>[navigation]</code> 
+and <code>[reports]</code> sections, you can start setting styles instead of 
+using settings like <code>BG_Color</code> and <code>Font</code>. Using stylesheets 
+makes it easier to manage your styles and keep them consistent with the rest 
+of your site. The stylesheet is used in the following manner:</p>
+<pre>
+	h1	The title at the top of each report file
+	h2	The title of each individual report
+	h4	Navigation page title
+	th	Header columns on the data tables
+	td.alt1	First color option for tabled data
+	td.alt2	Second color option for tabled data
+	th.total	Style options for summary rows at bottom of tables
+	.fineprint	Style for time and range of report
+	.smallfont	Style for 'SmallFonts' option in Simple reports
+</pre>
+<p>When using stylesheets, any style settings you add to your settings file 
+(such as <code>[reports] Font</code> will override the styles defined in the 
+stylesheets. If you only want to use the styles in your stylsheets, then remove 
+all the other style settings from your settings file.</p>
+
+<h3>Notes on the HTML in report files</h3>
+<p>When Report Magic creates your report files, it writes all the HTML codes to 
+a single line. This saves as much as 15% of the filesize, making the reports load 
+faster and reducing the bandwidth they consume. Sometimes, though, you want to 
+change the files or perhaps compare two files with <code>diff</code>. If you want 
+to make the HTML more readable try the excellent tidy utility from W3C. You can 
+download it from <a href="http://tidy.sourceforge.net/">here</a>, precompiled 
+for many platforms. This will produce a more readable HTML format than any other 
+option could do.</p>
+
+<h3>Customizing report text</h3>
+<p>As described in the <a href="repconf.html">Report Settings</a> page, you 
+can create report-specific sections in your settings file and override report 
+definitions to change display and text. The settings that you can change are 
+those defined in the <code>rdata.ini</code> of the current language (plus any 
+inherited from the English -- or default, see below -- language settings). Each 
+<code>rdata.ini</code> file in the language subdirectories (e.g. <code>lang/en</code>) 
+contains comments in the local language to help you understand what the settings 
+mean and what can be done with them.</p>
+
+
+<h3>Creating new language files</h3>
+<p>The files in these language directories, <code>rdata.ini</code>, 
+<code>cdata.ini</code> and <code>lang.ini</code> provide localizations 
+for Report Magic. Specifically, they include interface, descriptions, reporting 
+and graphing options for the reports created by Analog. These also contain all 
+the text used in the report files created by Report Magic for Analog. If you are 
+interested in creating a new language version or changing some of the text of 
+the output, your can modify these files. But keep a backup, because you could 
+easily make changes the Report Magic won't understand. Report Magic looks in a 
+subdirectory of <code>lang</code> as specified in the <code>[statistics] 
+Language</code> setting for language files. So if you are creating custom versions 
+of an existing language you could create your own directory (such as 
+'<code>my_es</code>') under <code>lang</code> and then specify that directory as 
+your language setting. e.g. "<code>Language=my_es</code>"</p>
+
+<p>The files in the language directories contain some (albeit minimal) documentation 
+for what all the setting are. Additional help for translators is available in the 
+'Developers and Translators' page on the 
+<a href="http://www.reportmagic.org/">Report Magic website</a>.</p>
+
+<h3>Creating custom reports</h3>
+<p>Report Magic can use custom reports instead of the predefined reports that 
+ship with it. To create a custom report, you need to be familiar with Perl. You 
+create a Perl module that inherits from <code>wadg::rm::Report</code>, and then 
+specify your new class as the <code>ReportType</code> for any report you want 
+to have use it. The <code>Report.pm</code> contains documentation with each method
+describing what the method is used for. <i><b>However</b>, the API may change in 
+a future release of Report Magic</i>. This doesn't mean you shouldn't make custom 
+reports, if you're so inclined. Rather, if you do, please join the 
+<a href="http://www.reportmagic.org/lists.html">Report Magic Announce list</a> to 
+hear of any pending changes and/or communicate with <a href="mailto:dgsupport@wadsack-allen.com">
+Wadsack-Allen Digital Group</a> if you have any changes you'd like to request in the API.</p>
+
+ 
+        
+
+        <div style="text-align: center; border-top: 2px solid black; border-bottom: 2px solid black; margin-top: 4px; margin-bottom: 6px; padding-top: 4px; padding-bottom:6px;">
+            [<a href="index.html">Introduction</a>]&nbsp;[<a href="map.html">Documentation&nbsp;map</a>]&nbsp;[<a href="siteindex.html">Index</a>]&nbsp;[<a href="faq.html">Frequently Asked Questions</a>]&nbsp;[<a href="license.html">License</a>]
+        </div>
+        
+        <span class="fineprint">Send questions or comments to <a href="mailto:dgsupport@wadsack-allen.com">Wadsack-Allen Digital Group Support</a>.<br />
+         <a href="http://reportmagic.org/">Report Magic</a> 2.21 Documentation. Copyright &copy; 1999-2003 <a href="http://wadsack-allen.com/">Wadsack-Allen</a>. All Rights Reserved.</span>
+    </body>
+</html>
+
+
+
+
+
+
+

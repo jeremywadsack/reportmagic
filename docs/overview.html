@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1" />
+        <meta name="AUTHOR" content="This page created by Wadsack-Allen Digital Goup" />
+        <title>Report Magic for Analog Documentation - Quick Start</title>
+<style type="text/css">
+<!--
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+a {
+    text-decoration:normal;
+}
+
+h1 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:24pt; 
+    font-weight:bold;
+}
+
+h2 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:18pt; 
+    font-weight:bold;
+}
+
+h3 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:16pt; 
+    font-weight:bold;
+}
+
+h4 {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:14pt; 
+    font-weight:bold
+}
+
+dl {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ul {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ol {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+.fineprint {
+    font-family:Arial, Helvetica; 
+    font-size:8pt;
+}
+
+.fineprint a {
+    color:#000099;
+    font-weight:bold;
+}
+
+code {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+pre {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+
+.note  { 
+	background-color: #f50000; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px #c50000; 
+}
+
+.term  { 
+	background-color: #f5f5f5; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px silver;
+	font-family: monospace,courier,fixedsys;
+	font-size: 8pt;
+}
+-->
+</style>
+    </head>
+
+    <body bgcolor="#ffffff" text="#000000" link="#000099" vlink="#cc3399" alink="#003399">
+        <table border="0" cellspacing="0" cellpadding="0" summary="Layout table">
+            <tr>
+                <td align="center"><a href="http://www.reportmagic.org/"><img src="images/title.gif" width="288" height="66" alt="Report Magic for Analog" border="0" /></a> </td>
+
+                <td rowspan="2" align="left" valign="top"><img src="images/logo.gif" width="138" height="150" alt="Documentation" /> </td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="top" width="291">
+                    <h1>Quick Start</h1>
+                </td>
+            </tr>
+        </table>
+        
+
+<h2>Installation</h2>
+<p>The first step to using Report Magic for Analog is to install it. You've 
+probably already downloaded Report Magic (if not see the 
+<a href="http://reportmagic.org/download.html">download 
+page</a> online). Next you need to extract the archive into the directory 
+you wish to install Report Magic in. For specific install instructions for 
+each package choose one of the following:</p>
+<ul>
+<li><a href="inst_win.html">Windows Binary Package</a></li>
+<li><a href="inst_mac.html">Macintosh Binary Package</a></li>
+<li><a href="inst_src.html">Source Package</a></li>
+</ul>
+
+<h2>Testing Your Installation</h2>
+<p>After installing, it is a good idea to test the installtion. Report Magic ships
+with some sample data you can use to test the setup. Here are the instructions to 
+follow for testing, depending on your platform:</p>
+<dl>
+<dt>Source Package</dt>
+<dd>From the rmagic directory, type <code>./rmagic.pl</code>. Report Magic will 
+create a set of report files in the <code>reports/</code> directory. Verify these with 
+your web browser (or <code>lynx</code>).</dd>
+
+<dt>Windows Binary Package (Quick and Dirty)</dt>
+<dd>From Explorer, go to 'Program Files', then 'WADigital', then 'ReportMagic'. 
+Double-click the Report Magic icon. Report Magic will create a folder called 'reports' 
+and put all the reports in there. Look for a file in the 'reports' folder called 
+'index.html' and double-click it to see the results in your browser.</dd>
+
+<dt>Windows Binary Package (Using a Command Prompt)</dt>
+<dd>Go to Start|Program|Command Prompt (this may be elsewhere, like 
+Start|Programs|Accessories|System Tools on ME or 2000). Enter <code>cd 
+"\Program Files\WADigital\ReportMagic"</code>. Type <code>rmagic</code> and 
+press enter. You will see the status as it creates the reports. When done, open 
+the reports in the reports folder as described above.</dd>
+
+<dt>Macintosh Binary Package</dt>
+<dd>From the Report Magic folder, Double-click the Report Magic icon. 
+Report Magic will create a folder called 'reports' and put all the reports in 
+there. Look for a file called 'index.html' in the reports folder and 
+double-click it to see the results in your browser.</dd>
+</dl>
+
+<h2>Configuration</h2>
+<p>Now, you'd probably like to get some results from your own logs. First, you 
+will need to have <a href="http://www.analog.cx/">Analog</a> installed 
+and configured on your system or server. If you have not done this already, 
+go to the <a href="http://www.analog.cx/">Analog 
+Web Site</a> and follow the instuctions there. While configuring Analog, it 
+is helpful to use the OUTPUT HTML configuration (the default) so you can 
+preview the reports to make sure they contain all the right data.</P>
+
+<h3>Setting up Analog for use with Report Magic</h3>
+<p>Now that you have Analog running, you will want to create a 
+new Analog configuration file or modify your current one to tell 
+Analog to create <b>Computer Readable Output</b>. (If you are creating a new 
+configuration file for Report Magic, try to get it working in Analog with the standard 
+Analog HTML output first. That way, you know what kind of results you'll be 
+generating and you can isolate any problems with the analysis before you 
+get to the formatting.) There are only two lines that need to be changed 
+(or added) to an Analog configuration to make it work with Report Magic:</p>
+
+<p>The first line to change tells Analog what kind of output to create. Find 
+a line with that starts with the word <b>OUTPUT</b> and change it to read 
+as follows. If no such line exists (as in the default configuration) just add 
+this line anywhere in the Analog configuration file (although it's helpful to put
+it next to the OUTFILE line, below).</p>
+<dl><dd><code>
+	OUTPUT COMPUTER
+</code></dd></dl>
+
+<p>The next line to change tells Analog where the output is going. We don't 
+want to overwrite any existing Analog reports, and we're not creating HTML 
+output so lets change the line starting with the word <b>OUTFILE</b> to:</p>
+<dl><dd><code>
+	OUTFILE report.dat
+</code></dd></dl>
+
+<p>(Of course, if you're running Report Magic in a different 
+directory than Analog, then you'll probably want this file to end up there, 
+so put in any path information necessary.)</p>
+
+<P>Having done that, go ahead and run Analog with your new configuration file. 
+Analog will tell you if there are any problems with the configuration you've 
+created. If the configuration is good, Analog will create the 
+<CODE>report.dat</CODE> computer readable output file that Report Magic uses.</P>
+
+<P>MAC USERS: It will be easiest if, after creating your 
+<CODE>report.dat</CODE> file, you copy/move it to the Report Magic directory. 
+This way, when creating your Report Magic settings file, you won't need to 
+worry about paths.</P>
+
+
+<h3>Setting up Report Magic</h3>
+
+<p>Next, you'll want to set up the output and formatting options for Report 
+Magic. The easiest way to start is to make a copy of the <code>rmagic.sample</code> 
+file in the distribution, rename it to <code>rmagic.ini</code> (<code>Report Magic.ini</code>
+for the Mac Edition) and edit that. </p>
+
+<p>In your new <code>rmagic.ini</code> file you will want to change the following
+settings:</p>
+
+<dl>
+<dt>[statistics]<br />File_In</dt>
+<dd>Set this to point the the file you created with Analog. If you copied it 
+to the Report Magic directory, then just set this to <code>report.dat</code></dd>
+
+<dt>[reports]<br />File_Out</dt>
+<dd>Set this to the path where you want to write the report files.</dd>
+
+<dt>[website]<br />Title</dt>
+<dd>Give a title for your reports.</dd>
+
+</dl>
+
+
+<H2>Running Report Magic</H2>
+<P>When your settings file is completed, you can run Report Magic for Analog 
+to generate your report files.</p>
+<p>On <b>Windows</b> just type this on the command line in the Report Magic 
+directory or double click the Report Magic icon:</P>
+<DL><DD><CODE>
+	rmagic
+</DL></DD></CODE>
+
+<P>If you have the <b>source version</b> you can run it from a command line 
+like this (assuming you installed Perl in /usr/bin/perl):</P>
+<DL><DD><CODE>
+	./rmagic.pl
+</DL></DD></CODE>
+<P>If you have a <b>Mac Binary</b> version just double click the Report Magic icon.</P>
+<P>When Report Magic is complete you should have a new set of report files in 
+the <CODE>reports</CODE> subdirectory. Open the file <CODE>index.html</CODE> 
+with your web browser to start viewing your reports.</CODE>
+
+<h2>Going Further</h2>
+<p>Report Magic has a lot of options and configurations. The first things you 
+will probably want to do is change some of the settings to configure the reports 
+to look the way you want. Complete details of all the settings that Report 
+Magic will understand can be found on the page 
+<a href="config.html">Building your Settings File.</A></p>
+
+<p>If you want to tell Report Magic to use a different settings file than 
+<code>rmagic.ini</code> or you want to set options from the command-line 
+(for scripts and scheduling, for example) see the page 
+<a href="commands.html">Running Report Magic for Analog</a>.</p>
+
+<a>If you learn better by example, take a look at some of the 
+samples settings files and style sheets in the <code>samples</code> folder 
+in the distribution. If you have other questions, check the 
+<a href="faq.html">Frequently Asked Questions</a> for the answer.</p>
+
+ 
+        
+
+        <div style="text-align: center; border-top: 2px solid black; border-bottom: 2px solid black; margin-top: 4px; margin-bottom: 6px; padding-top: 4px; padding-bottom:6px;">
+            [<a href="index.html">Introduction</a>]&nbsp;[<a href="map.html">Documentation&nbsp;map</a>]&nbsp;[<a href="siteindex.html">Index</a>]&nbsp;[<a href="faq.html">Frequently Asked Questions</a>]&nbsp;[<a href="license.html">License</a>]
+        </div>
+        
+        <span class="fineprint">Send questions or comments to <a href="mailto:dgsupport@wadsack-allen.com">Wadsack-Allen Digital Group Support</a>.<br />
+         <a href="http://reportmagic.org/">Report Magic</a> 2.21 Documentation. Copyright &copy; 1999-2003 <a href="http://wadsack-allen.com/">Wadsack-Allen</a>. All Rights Reserved.</span>
+    </body>
+</html>
+
+
+

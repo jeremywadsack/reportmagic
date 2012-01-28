@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1" />
+        <meta name="AUTHOR" content="This page created by Wadsack-Allen Digital Goup" />
+        <title>Report Magic for Analog Documentation - Running Report Magic</title>
+<style type="text/css">
+<!--
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+a {
+    text-decoration:normal;
+}
+
+h1 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:24pt; 
+    font-weight:bold;
+}
+
+h2 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:18pt; 
+    font-weight:bold;
+}
+
+h3 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:16pt; 
+    font-weight:bold;
+}
+
+h4 {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:14pt; 
+    font-weight:bold
+}
+
+dl {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ul {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ol {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+.fineprint {
+    font-family:Arial, Helvetica; 
+    font-size:8pt;
+}
+
+.fineprint a {
+    color:#000099;
+    font-weight:bold;
+}
+
+code {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+pre {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+
+.note  { 
+	background-color: #f50000; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px #c50000; 
+}
+
+.term  { 
+	background-color: #f5f5f5; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px silver;
+	font-family: monospace,courier,fixedsys;
+	font-size: 8pt;
+}
+-->
+</style>
+    </head>
+
+    <body bgcolor="#ffffff" text="#000000" link="#000099" vlink="#cc3399" alink="#003399">
+        <table border="0" cellspacing="0" cellpadding="0" summary="Layout table">
+            <tr>
+                <td align="center"><a href="http://www.reportmagic.org/"><img src="images/title.gif" width="288" height="66" alt="Report Magic for Analog" border="0" /></a> </td>
+
+                <td rowspan="2" align="left" valign="top"><img src="images/logo.gif" width="138" height="150" alt="Documentation" /> </td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="top" width="291">
+                    <h1>Running Report Magic</h1>
+                </td>
+            </tr>
+        </table>
+        
+
+<h2>Binary or Source Package?</h2>
+<p>Report Magic for Analog is available in pre-compiled binary format or 
+a source package that you run through your Perl interpreter. A Perl 
+interpreter is available for virtually every platform. For more information 
+on Perl see <a href="http://www.perl.com/">http://www.perl.com</a>.</p>
+
+<p>If you have the Source Package and if Perl is on your path, type the 
+following to run Report Magic for Analog. If it's not on your path just 
+insert the right directory in front of the "perl" below to tell the system 
+where to find it.</p>
+<dl><dd><code>
+	perl rmagic.pl
+</dl></dd></code>
+
+<p>If you have a Windows Binary version of Report Magic for Analog, it is 
+easiest to open a DOS Prompt Window, change directory to the directory where 
+Report Magic is installed and type this:</p>
+<dl><dd><code>
+	rmagic
+</dl></dd></code>
+
+<p>Users of the Mac Binary package can just double-click the Report Magic 
+icon.</p>
+
+<H2>Using an Alternate Settings File</H2>
+<P>Report Magic for Analog looks for a configuration file with the name 
+like "rmagic.ini" ("Report Magic.ini" on the Mac). (Actually, you can put 
+anything you want after the ".", including "conf", "cfg" or "settings".) 
+Report Magic looks for this file in the directory <i>that it 
+is run from</i> (the current directory, not the Report Magic directory; not 
+your /usr/local/etc directory). This settings file gives Report Magic for 
+Analog all the settings it needs to make your reports. (For more information 
+on making the settings file, see <A HREF="config.html">Building your 
+Settings File</A>.)</P>
+
+<p>Alternately, you can specify, via the command line (if you're system has 
+such -- this doesn't apply on the Mac), a different 
+configuration file to use. For example, if you had a configuration file 
+called <code>mystats.ini</code> you could have Report Magic use these 
+settings instead of it's defaults by typing one of these (depending on your 
+system):</p>
+
+<dl><dd><code>
+	rmagic mystats.ini
+</code></dd></dl>
+
+<p>or</p>
+
+<dl><dd><code>
+	perl rmagic.pl mystats.ini
+</code></dd></dl>
+
+<P>For GUI systems that support drag-and-drop (especially Mac) you need only 
+drop the <CODE>mystats.ini</CODE> file on the Report Magic icon. That's it. 
+Once it runs, you should have a nice set of report files in your output 
+directory.</P>
+
+<H2>Changing settings from the command line</H2>
+<P>Every settings file option can be overriden from the command-line (if your 
+system has one). This means you can create a settings file with default values 
+for all your reports and, for example, specify the input and output files 
+from the command-line. The format of the command-line parameters is the same 
+as the name in the settings file but each parameter starts with a '-' followed 
+by the section name, an '_', and the parameter name. For items that require 
+values, you then add an '=', and the value. For example, to set the input file 
+(the item <code>File_In</code> in the <code>[statistics]</code> section) to 
+<code>/usr/bin/analog/report.dat</code> from the command-line you would use 
+something like this:</P>
+<pre><code>
+	./rmagic.pl -statistics_File_In=/usr/bin/analog/report.dat
+</code></pre>
+<P>Values with spaces in them must be quoted. For example, to set the title 
+of the reports in a given run you could use something like this:</P>
+<pre><code>
+	./rmagic.pl -website_Title="My Client's Website Statistics"
+</code></pre>
+
+<P>Settings that only set a true or false value (or 1 or 0) can be added 
+to the command-line without a value to make them true. For example, if you 
+decided to include a ROBOTS meta tag in one of your runs, you could add 
+it at the command line like this:</P>
+<pre><code>
+	./rmagic.pl -statistics_No_Robots
+</code></pre>
+<P>This is equivalent to setting <code>No_Robots = 1</code> in the 
+<code>[statistics]</code> section of your settings file.</P>
+ 
+        
+
+        <div style="text-align: center; border-top: 2px solid black; border-bottom: 2px solid black; margin-top: 4px; margin-bottom: 6px; padding-top: 4px; padding-bottom:6px;">
+            [<a href="index.html">Introduction</a>]&nbsp;[<a href="map.html">Documentation&nbsp;map</a>]&nbsp;[<a href="siteindex.html">Index</a>]&nbsp;[<a href="faq.html">Frequently Asked Questions</a>]&nbsp;[<a href="license.html">License</a>]
+        </div>
+        
+        <span class="fineprint">Send questions or comments to <a href="mailto:dgsupport@wadsack-allen.com">Wadsack-Allen Digital Group Support</a>.<br />
+         <a href="http://reportmagic.org/">Report Magic</a> 2.21 Documentation. Copyright &copy; 1999-2003 <a href="http://wadsack-allen.com/">Wadsack-Allen</a>. All Rights Reserved.</span>
+    </body>
+</html>
+
+
+

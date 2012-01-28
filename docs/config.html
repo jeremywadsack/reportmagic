@@ -1,0 +1,383 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso8859-1" />
+        <meta name="AUTHOR" content="This page created by Wadsack-Allen Digital Goup" />
+        <title>Report Magic for Analog Documentation - Building your Settings File</title>
+<style type="text/css">
+<!--
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:11pt;
+}
+
+a {
+    text-decoration:normal;
+}
+
+h1 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:24pt; 
+    font-weight:bold;
+}
+
+h2 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:18pt; 
+    font-weight:bold;
+}
+
+h3 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size:16pt; 
+    font-weight:bold;
+}
+
+h4 {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:14pt; 
+    font-weight:bold
+}
+
+dl {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ul {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+ol {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10pt;
+}
+
+.fineprint {
+    font-family:Arial, Helvetica; 
+    font-size:8pt;
+}
+
+.fineprint a {
+    color:#000099;
+    font-weight:bold;
+}
+
+code {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+pre {
+    font-family: "Courier New", Courier, Monospaced, System; 
+}
+
+.note  { 
+	background-color: #f50000; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px #c50000; 
+}
+
+.term  { 
+	background-color: #f5f5f5; 
+	margin-right: 2em; 
+	margin-left: 2em; 
+	padding-right: 2px; 
+	padding-left: 2px; 
+	border: solid 1px silver;
+	font-family: monospace,courier,fixedsys;
+	font-size: 8pt;
+}
+-->
+</style>
+    </head>
+
+    <body bgcolor="#ffffff" text="#000000" link="#000099" vlink="#cc3399" alink="#003399">
+        <table border="0" cellspacing="0" cellpadding="0" summary="Layout table">
+            <tr>
+                <td align="center"><a href="http://www.reportmagic.org/"><img src="images/title.gif" width="288" height="66" alt="Report Magic for Analog" border="0" /></a> </td>
+
+                <td rowspan="2" align="left" valign="top"><img src="images/logo.gif" width="138" height="150" alt="Documentation" /> </td>
+            </tr>
+
+            <tr>
+                <td align="left" valign="top" width="291">
+                    <h1>Building your Settings File</h1>
+                </td>
+            </tr>
+        </table>
+        
+
+<H2>Report Magic for Analog Settings</H2>
+<P>Report Magic for Analog's settings are separated into at least five 
+sections, <CODE>statistics</CODE>, <CODE>navigation</CODE> and 
+<CODE>website</CODE> and the <code>graphs</code>, <CODE>reports</CODE> and related sections. 
+The <CODE>statistics</CODE> section covers general settings for creating the 
+reports. The <CODE>navigation</CODE> section tells Report Magic for Analog how 
+to format and display the navigation page or naviagtion menu (if on the same page). 
+The <CODE>website</CODE> section has some options for linking website data and feedback. 
+The <code>graphs</code> section allows you to define many formatting options for graphs 
+and the <CODE>reports</CODE> section provide formatting settings for how the report 
+pages should look. You can also create a section for each specific report to customize 
+settings for that report alone.</p>
+
+<p>Below are sample settings for the first three section and a description of what each 
+setting means. The <code>graphs</code>, <code>reports</code> and related sections are 
+covered on a <a href="repconf.html">separate page</a>.</P>
+
+<a name="statistics"></a><H3><CODE>statistics</CODE> Section</H3>
+<PRE>
+[statistics]
+File_In = report.dat
+Frame_File_Out = index.html
+Frame_Border = 0
+No_Robots = 1
+Log_File = rmagic.log
+Always_Quit = 1
+Language = en
+Verbose = NWE
+Include = standard.ini
+Format = XHTML 1.0
+</PRE>
+<DL>
+<DT><CODE>File_In</CODE></DT>
+<DD>This is the location of the computer readable output from Analog. It 
+can include a path name (including a drive letter or network path). This is 
+relative to the directory from which Report Magic for Analog was run.</DD>
+<DD>The special filename '-' can be used to tell Report Magic to read the input 
+from the standard input (STDIN) (i.e. your keyboard or a pipe, '|', on a command 
+line). This option supports the %infile% and %dateformat% codes descibed 
+under <CODE>File_Out</CODE> in the <CODE>[reports]</CODE> section, below.</DD>
+
+<DT><CODE>Frame_File_Out</CODE> (<I>Optional</I>)</DT>
+<DD>This is the name of the frameset page. <I>It no longer uses a path name 
+or drive letter.</I> (You can put a path in here, but it will be ignored. The 
+path specified in <CODE>report_File_Out</CODE>, below, is used for all 
+files.) This option supports the %infile% and %dateformat% codes descibed 
+under <CODE>File_Out</CODE> in the <CODE>[reports]</CODE> section, below. If 
+no value is given, and Report Magic is producing a frameset, then this will 
+defaut to 'index.html'.</DD>
+
+<DT><CODE>Frame_Border</CODE> (<I>Optional</I>)</DT>
+<DD>This sets the width of the separator between the navigation and report frames. 
+If you set this to '0' then no separator will be drawn (and the frames will not be 
+resizable).</DD>
+
+<DT><CODE>No_Robots</CODE> (<I>Optional</I>)</DT>
+<DD>This option, if set to 1, will add a META tag to each output file to 
+tell robots not to index the files.</DD>
+
+<DT><CODE>Log_File</CODE> (<I>Optional</I>)</DT>
+<DD>This option gives the name of a file to which Report Magic will send all 
+messages (errors or notices). This is useful for automated jobs, especially 
+on a Mac platform where you don't have redirection. By default, if no 
+logfile is given (if this option is not used), all notification 
+and error messages are written to STDERR (your console screen). Errors are 
+appended to (added to the end of) the logfile. The name of 
+the logfile can include the %infile% and %dateformat% codes descibed 
+under <CODE>File_Out</CODE> in the <CODE>[reports]</CODE> section, below.</DD>
+
+<DT><CODE>Always_Quit</CODE> (<I>Optional</I>, Mac only)</DT>
+<DD>For the Mac platform only, this option tells Report Magic to quit the 
+program whenever any error occurs. (Normally it leaves the "console" window 
+up so you can see any messages.) This is especially useful when running 
+Report Magic as a scheduled task with the 'cron' utility (or other task 
+scheduler). If you are using the logging option (above) it will also quit 
+the program on errors and on completion, so this is redundant when logging 
+is enabled. This option has no effect on non-Mac platforms.</DD>
+
+<DT><CODE>Language</CODE> (<I>Optional</I>)</DT>
+<DD>This will set the language to be used for the current report. Valid 
+languages are listed in the <CODE>lang</CODE> directory under the directory 
+where you installed Report Magic. There is a directory for each set of 
+language files. So, for example, to set the report to German you would use 
+'de'. Rembemer that if you are setting the language in Report Magic for a 
+set of reports to also set the langauge in the Analog config file or your 
+Daily Summary will show every day as Sunday.</DD>
+<DD><I>Note</I> If you are running Analog 3.x and want the output in German, 
+rename the file lang/de/lang_3.ini to lang/de/lang.ini.</DD>
+
+<DT><CODE>Verbose</CODE> (<I>Optional</I>)</DT>
+<DD>This allows you to control what kind of messages Report Magic tells when 
+running. The valid values are N for Notices, W for Warnings and E for errors. 
+The default is to output all. To tell Report Magic to be absolutely quiet use 
+the keyword NONE.</DD>
+
+<DT><CODE>Include</CODE> (<I>Optional</I>)</DT>
+<DD>You can include the contents of another setting file in a given file. 
+This setting takes the name of a settings file whose values will 
+be included. The settings in the current file will override anything in the 
+included file. This is an easy way for an ISP to include a standard file and 
+customize just the necessary settings for each client. This option supports the 
+%infile% and %dateformat% codes descibed under <CODE>File_Out</CODE> in the 
+<CODE>[reports]</CODE> section, below.</DD>
+
+<dt><code>Format</code> (<i>Optional</i>)</dt>
+<dd>This specifies the output file format for the reports. Currently
+undertood formats are 'XHTML 1.0' (which converts reports formating 
+choices into CSS style sheets) and 'HTML 3.2' (which uses lots of 
+tags). Default is 'XHTML 1.0'.</dd>
+
+</DL>
+
+<a name="navigation"></a><H3><CODE>navigation</CODE> Section</H3>
+<PRE>
+[navigation]
+File_Out = navfile.html
+BG_Color = #FFFFFF
+Background = images/flag_bg.gif
+Font_Color = #000000
+Font = Verdana, Arial
+Bullet_Image = images/bar1.gif
+Stylesheet = styles.css
+Top_Logo = logo.html
+</PRE>
+<DL>
+<DT><CODE>File_Out</CODE> (<I>Optional</I>)</DT>
+<DD>This is the name of the file for the navigation page. This option 
+supports the %infile% and %dateformat% codes descibed under 
+<CODE>File_Out</CODE> in the <CODE>[reports]</CODE> section, above.</DD>
+<DD>If this setting is not specified, then Report Magic will create 
+the reports without the frameset. Instead of a navigation frame, each 
+report will have a navigation menu to the right.</DD>
+
+<DT><CODE>BG_Color</CODE> (<I>Optional</I>)</DT>
+<DD>This is an optional setting that specifies the background 
+color<SUP>*</SUP> of the navigation page.</DD>
+
+<DT><CODE>Background</CODE> (<I>Optional</I>)</DT>
+<DD>This is an optional image for the navigation page background</DD>
+
+<DT><CODE>Font_Color</CODE> (<I>Optional</I>)</DT>
+<DD>This is the color<SUP>*</SUP> of the output text on the navigation page. 
+All text (normal and hyperlinked) will be this color.</DD>
+
+<DT><CODE>Font</CODE> (<I>Optional</I>)</DT>
+<DD>This is the name of the desired typeface for the text on the navigation 
+page. This can be a comma-separated list of typeface options, such as 
+"Arial, Helvetica, sans-serif".</DD>
+
+<DT><CODE>Bullet_Image</CODE> (<I>Optional</I>)</DT>
+<DD>This is a virtual link to the image used for a bullet for navigation 
+items. Report Magic for Analog neither checks for the existence of this image 
+nor copies it from anywhere, so make sure this image exists as specified. 
+This name is a virtual (i.e. on the website) reference relative to the 
+<I>navigation page</I>.</DD>
+
+<dt><code>Stylesheet</code> (<i>Optional</i>)</dt>
+<dd>This points to a file contianing a stylesheet for Report Magic to use 
+for styles. If your output format is 'XHTML 1.0' then the reports will contain 
+a link to this sheet. In this case, this should be a URL and you need to make 
+the stylesheet available to the web page when you publish the reports. If your 
+output format is 'HTML 3.2' then this should be a local filename and the reports 
+will be built with <code>&lt;FONT&gt;</code> and other tags based on the 
+styles defined in the stylesheet. For details on the format for a stylesheet, 
+see the entry on the <a href="advanced.html">advanced settings page</a>.</dd>
+
+<dt><code>Top_Logo</code> (<em>optional</em>)</dt>
+<dd>Use this to give the name of a file (relative to the working
+directory) that contains a snippet of HTML to insert at the
+top of the page. If this is provided it replaces the "Report
+Navigation" text.</dd>
+
+
+</DL>
+
+
+<P><SUP>*</SUP><B>Note</B>: All colors can be a standard browser 
+color name or a 6-digit hex color code preceded by a number sign. (e.g. 
+"black" or #000000).</P>
+
+
+<a name="cgi"></a><h3><code>CGI</code> Section</h3>
+<pre>
+[CGI]
+Analog = /usr/bin/analog
+Analog_Forbidden = LOGFORMAT APACHELOGFORMAT DEFAULTLOGFORMAT APACHEDEFAULTLOGFORMAT HEADERFILE FOOTERFILE UNCOMPRESS OUTFILE CACHEOUTFILE LOCALCHARTDIR ERRFILE DNS CGI SETTINGS PROGRESSFREQ LANGFILE DESCFILE
+Analog_Allowed = 
+Forbidden = statistics_File_In statistics_Include statistics_Log_File statistics_Frame_File_Out graphs_Path_To graphs_URL_To reports_File_Out navigation_File_Out navigation_Top_Logo website_Company_Logo
+Allowed = 
+</pre>
+
+<dl>
+<dt><code>Analog</code></dt>
+<dd></dd>
+<dt><code>Analog_Forbidden</code></dt>
+<dd></dd>
+<dt><code>Analog_Allowed</code></dt>
+<dd></dd>
+<dt><code>Forbidden</code></dt>
+<dd></dd>
+<dt><code>Allowed</code></dt>
+<dd></dd>
+</dl>
+
+
+
+<a name="website"></a><H3><CODE>website</CODE> Section</H3>
+<PRE>
+[website]
+Title = My Web Site Report
+Webmaster = webmaster@flaglink.com
+Base_URL = http://www.flaglink.com
+Company_Logo = logofile.htm
+</PRE>
+<DL>
+<DT><CODE>Title</CODE></DT>
+<DD>This is the text title of the entire statistics report and frameset. It 
+appears at the top of each report file and as the title for the frameset 
+(i.e. in the browser titlebar). This would be something like 
+"Web Statistics for My Website". This option supports the insertion codes 
+(like ${infile} and %mmm d, yyyy%) as descibed under 
+<code>[reports]File_Out</code> in the <a href="repconf.html">report 
+settings</a> page and in the <a href="advanced.html">advanced settings</a>.</DD>
+
+<DT><CODE>BaseURL</CODE> (<I>Optional</I>)</DT>
+<DD>This is the base URL of the site for which these statistics were made. 
+If you don't include this setting then links pertaining to the website for 
+which the statistics were compiled will be relative to root of the site that 
+the reports are hosted on. (In other words, if your hosting the stats on a 
+different website than they came from, include this setting.)</DD>
+
+<DT><CODE>Webmaster</CODE> (<I>Optional</I>)</DT>
+<DD>This is email address to contact for questions on the reports. If you 
+don't include this setting, the "Contact us" feedback message will not be 
+included.</DD>
+
+<DT><CODE>Company_Logo</CODE> (<I>Optional</I>)</DT>
+<DD>With this option you can specify the name of a file that Report Magic 
+will load to insert at the bottom of each report. This file should contain 
+a snippet of HTML (that is, something like "&lt;FONT SIZE=1&gt;Hosted by 
+mycompany.com&lt;/FONT&gt;") that can include your hosting company name, 
+your logo (through an IMG tag) or anything else you want in the footer of 
+each report. Using this option will also cause the logo images for Analog, 
+Wadsack-Allen Digital Group and DNS Websites to be removed. This can save 
+bandwidth and storage, especially when hosting a large number of client sites.</DD>
+</DL>
+
+
+ 
+        
+
+        <div style="text-align: center; border-top: 2px solid black; border-bottom: 2px solid black; margin-top: 4px; margin-bottom: 6px; padding-top: 4px; padding-bottom:6px;">
+            [<a href="index.html">Introduction</a>]&nbsp;[<a href="map.html">Documentation&nbsp;map</a>]&nbsp;[<a href="siteindex.html">Index</a>]&nbsp;[<a href="faq.html">Frequently Asked Questions</a>]&nbsp;[<a href="license.html">License</a>]
+        </div>
+        
+        <span class="fineprint">Send questions or comments to <a href="mailto:dgsupport@wadsack-allen.com">Wadsack-Allen Digital Group Support</a>.<br />
+         <a href="http://reportmagic.org/">Report Magic</a> 2.21 Documentation. Copyright &copy; 1999-2003 <a href="http://wadsack-allen.com/">Wadsack-Allen</a>. All Rights Reserved.</span>
+    </body>
+</html>
+
+
+
