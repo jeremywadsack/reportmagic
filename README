@@ -22,15 +22,6 @@ Installation instructions are located in the files docs/inst_src.html,
 docs/inst_win.html and docs/inst_mac/html. They are also available on 
 the Web at http://www.reportmagic.org/.
 
-OTHER OPTIONS
--------------
-[Shameless plugs] If you would like help installing Report Magic or 
-don't want the hassle of managing your entire statistics system, 
-the authors provide both a hosted solution, http://stats.reportmagic.com/ 
-(nice for one or two reports) and installation and configuration
-services. These are both commercial (i.e. paid) alternatives. 
-See http://www.reportmagic.com/ for all options.
-
 KNOWN BUGS
 ----------
 There is a BUGS page on the website. Check there for the most 
