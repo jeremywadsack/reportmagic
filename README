@@ -1,5 +1,5 @@
 Report Magic for Analog 2.21 Readme File
-Copyright (C) 1999-2003 Wadsack-Allen. All Right Reserved.
+Copyright (C) 1999-2014 Jeremy Wadsack. All Right Reserved.
 Portions copyright (C) 1999 DNS.
 
 Report Magic for Analog is an add-on formatting utility for Analog 
@@ -24,9 +24,7 @@ the Web at http://www.reportmagic.org/.
 
 KNOWN BUGS
 ----------
-There is a BUGS page on the website. Check there for the most 
-recently found problems:
-http://www.reportmagic.org/bugs.html
+Please post any issues to the GitHub project. https://github.com/jeremywadsack/reportmagic/issues
 
 LATEST VERSION
 --------------
@@ -36,5 +34,5 @@ http://www.reportmagic.org/.
 FEEDBACK
 --------
 Comments, questions and suggestions are always appreciated. Feedback on 
-Report Magic for Analog can be sent via email to dgsupport@wadsack-allen.com.
+Report Magic for Analog can be submitted to https://github.com/jeremywadsack/reportmagic/issues.
 
